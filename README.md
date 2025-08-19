@@ -1,3 +1,5 @@
-# RETAIL-APPLICATION
+# Flutter Base Project
+This is my Flutter project.
 
-RETAIL BASE APPLICATION
+# Retail Application Repo
+Initial setup from the new repo.
