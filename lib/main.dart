@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base_pro/ui/router/app_router.dart';
 import 'package:flutter_base_pro/themes/apz_app_themes.dart';
 import 'package:flutter_base_pro/themes/apz_theme_provider.dart';
 import 'package:provider/provider.dart';
@@ -30,7 +29,6 @@ class MyApp extends StatelessWidget {
       // The themeMode is controlled by our provider
       themeMode: themeProvider.themeMode,
       // The routerConfig tells the app how to handle navigation
-      routerConfig: AppRouter.router,
     );
   }
 }
