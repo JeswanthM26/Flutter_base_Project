@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_base_pro/api/apz_api_constants.dart';
-import 'package:flutter_base_pro/api/apz_api_response.dart';
-import 'package:flutter_base_pro/enums/apz_api_enums.dart';
+import 'package:flutter_base_pro/core/api/apz_api_constants.dart';
+import 'package:flutter_base_pro/core/api/apz_api_response.dart';
+import 'package:flutter_base_pro/data/enums/apz_api_enums.dart';
 
 class ApiService {
   final Dio _dio;

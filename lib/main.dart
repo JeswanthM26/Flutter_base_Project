@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base_pro/router/app_router.dart';
+import 'package:flutter_base_pro/ui/router/app_router.dart';
 import 'package:flutter_base_pro/themes/apz_app_themes.dart';
 import 'package:flutter_base_pro/themes/apz_theme_provider.dart';
 import 'package:provider/provider.dart';

@@ -53,3 +53,18 @@ flutter_base_project/
 |-- pubspec.yaml                 # Project dependencies and asset declarations
 |-- l10n.yaml                    # Configuration file for localization
 |-- README.md                    # Project documentation
+
+
+
+
+/lib/core → constants, utils, configs,api's
+
+/lib/data → models, services, repositories, enums ,validations
+
+/lib/ui → screens, widgets, components,router
+
+/lib/l10n → localization files
+
+/lib/theme → colors, typography, styles
+
+/lib/mock →jsons for api's

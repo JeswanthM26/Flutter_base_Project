@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base_pro/api/apz_api_repository.dart';
-import 'package:flutter_base_pro/models/product_model.dart';
+import 'package:flutter_base_pro/core/api/apz_api_repository.dart';
+import 'package:flutter_base_pro/data/models/product_model.dart';
 import 'package:flutter_base_pro/themes/apz_theme_provider.dart';
 import 'package:provider/provider.dart';
 

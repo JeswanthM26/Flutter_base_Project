@@ -41,11 +41,11 @@
 
 
 
-import 'package:flutter_base_pro/api/apz_api_constants.dart';
-import 'package:flutter_base_pro/api/apz_api_response.dart';
-import 'package:flutter_base_pro/api/apz_api_service.dart';
-import 'package:flutter_base_pro/enums/apz_api_enums.dart';
-import '../models/product_model.dart';
+import 'package:flutter_base_pro/core/api/apz_api_constants.dart';
+import 'package:flutter_base_pro/core/api/apz_api_response.dart';
+import 'package:flutter_base_pro/core/api/apz_api_service.dart';
+import 'package:flutter_base_pro/data/enums/apz_api_enums.dart';
+import '../../data/models/product_model.dart';
 
 class AppRepository {
   final ApiService _apiService = ApiService.instance;
