@@ -68,3 +68,43 @@ flutter_base_project/
 /lib/theme → colors, typography, styles
 
 /lib/mock →jsons for api's
+
+
+
+
+
+
+
+
+lib/
+|-- core/
+|   |-- config/
+|   |   |-- app_config.dart        (isMock toggle, baseUrl, env configs)
+|   |-- constants/
+|   |   |-- api_constants.dart     (Base URLs, endpoints)
+|   |-- network/
+|   |   |-- api_service.dart       (Generic HTTP client - GET, POST, etc.)
+|   |   |-- mock_service.dart      (Reads JSON files when mock mode enabled)
+|
+|-- data/
+|   |-- repositories/
+|   |   |-- product_repository.dart         (abstract class / interface)
+|   |   |-- product_api_repository.dart     (real API implementation)
+|   |   |-- product_mock_repository.dart    (mock implementation)
+|
+|-- models/
+|   |-- product.dart               (Data model: request/response mapping)
+|
+|-- ui/
+|   |-- screens/
+|   |-- widgets/
+|   |-- components/
+|
+|-- l10n/                          (localization files)
+|-- theme/                         (colors, typography, styles)
+|
+mock/
+|-- products/
+    |-- get_products.json          (mock response for Product API)
+|-- users/
+    |-- login.json                 (mock response for Login API)
