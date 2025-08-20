@@ -1,0 +1,16 @@
+{
+  "top_gainers": [
+    {
+      "ticker": "AAPL",
+      "price": "189.44",
+      "change_amount": "4.00",
+      "change_percentage": "+2.16%"
+    },
+    {
+      "ticker": "MSFT",
+      "price": "322.10",
+      "change_amount": "5.10",
+      "change_percentage": "+1.60%"
+    }
+  ]
+}
