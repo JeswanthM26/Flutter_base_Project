@@ -79,9 +79,9 @@
 // }
 
 
+import 'package:Retail_Application/core/utils/apz_api_service.dart';
+import 'package:Retail_Application/data/enums/apz_api_enums.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_base_pro/core/utils/apz_api_service.dart';
-import 'package:flutter_base_pro/data/enums/apz_api_enums.dart';
 
 class StocksScreen extends StatefulWidget {
   const StocksScreen({super.key});

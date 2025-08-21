@@ -1,5 +1,5 @@
+import 'package:Retail_Application/ui/screens/product_screen.dart';
 import 'package:go_router/go_router.dart';
-import 'package:flutter_base_pro/ui/screens/product_screen.dart';
 
 // GoRouter configuration
 final GoRouter router = GoRouter(

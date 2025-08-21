@@ -1,4 +1,4 @@
-name: flutter_base_pro
+name: "Retail_Application"
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -40,6 +40,7 @@ dependencies:
   go_router: ^10.0.0
   dio: ^5.4.1
   http: ^1.2.2 
+  rename: ^3.1.0
 
 dev_dependencies:
   flutter_test:
