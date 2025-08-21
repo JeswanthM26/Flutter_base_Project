@@ -1,3 +1,4 @@
+import 'package:Retail_Application/example/appz_button_example.dart';
 import 'package:flutter/material.dart';
 import 'package:Retail_Application/ui/screens/product_screen.dart';
 import 'package:Retail_Application/ui/screens/stock_screen.dart';
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ProductScreen(),
+      home: AppzButtonExample(),
     );
   }
 }
