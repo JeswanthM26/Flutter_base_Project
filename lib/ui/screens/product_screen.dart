@@ -1,10 +1,7 @@
+import 'package:Retail_Application/core/configs/apz_app_config.dart';
+import 'package:Retail_Application/data/repositories/apz_product.dart';
+import 'package:Retail_Application/models/product.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_base_pro/core/configs/apz_app_config.dart';
-import 'package:flutter_base_pro/data/repositories/apz_product.dart';
-import 'package:flutter_base_pro/data/repositories/apz_product_api.dart' hide ProductRepository;
-import 'package:flutter_base_pro/data/repositories/apz_product_mock.dart';
-import 'package:flutter_base_pro/models/product.dart';
-
 class ProductScreen extends StatefulWidget {
   const ProductScreen({super.key});
 

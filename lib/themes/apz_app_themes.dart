@@ -1,100 +1,170 @@
 import 'package:flutter/material.dart';
+import 'package:Retail_Application/themes/light_theme.dart'as light;
+import 'package:Retail_Application/themes/dark_theme.dart' as dark;
+ 
+class AppColors {
 
-class AppThemes {
-  // --- Light Theme ---
-  static final ThemeData lightTheme = ThemeData(
-    brightness: Brightness.light,
-    primaryColor: const Color(0xFF007BFF),
-    scaffoldBackgroundColor: const Color(0xFFF2F4F8),
-    colorScheme: const ColorScheme.light(
-      primary: Color(0xFF007BFF),
-      secondary: Color(0xFF00C4B4),
-      surface: Colors.white,
-      background: Color(0xFFF2F4F8),
-      error: Color(0xFFD32F2F),
-      onPrimary: Colors.white,
-      onSecondary: Colors.black,
-      onSurface: Colors.black,
-      onBackground: Colors.black,
-      onError: Colors.white,
-    ),
-    appBarTheme: const AppBarTheme(
-      color: Color(0xFF007BFF),
-      elevation: 2,
-      iconTheme: IconThemeData(color: Colors.white),
-      titleTextStyle: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
-    ),
-    // cardTheme: CardTheme(
-    //   elevation: 1,
-    //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-    //   margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-    // ),
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: const Color(0xFF007BFF),
-        foregroundColor: Colors.white,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-      ),
-    ),
-    inputDecorationTheme: InputDecorationTheme(
-      border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8),
-        borderSide: const BorderSide(color: Color(0xFF007BFF)),
-      ),
-    ),
-    floatingActionButtonTheme: const FloatingActionButtonThemeData(
-      backgroundColor: Color(0xFF007BFF),
-    ),
-  );
+  static Color primary(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.primary
+          : light.primary;
+ 
+  static Color secondary(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.secondary
+          : light.secondary;
+ 
+  static Color button(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.button
+          : light.button;
+ 
+  static Color button_pressed(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.button_pressed
+          : light.button_pressed;
+ 
+  static Color button_disabled(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.button_disabled
+          : light.button_disabled;
+ 
+  static Color button_2(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.button_2
+          : light.button_2;
+ 
+  static Color icons(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.icons
+          : light.icons;
+ 
+  static Color icons_2(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.icons_2
+          : light.icons_2;
+ 
+  static Color text_button(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.text_button
+          : light.text_button;
+ 
+  static Color text_primary(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.text_primary
+          : light.text_primary;
+ 
+  static Color text_inverse(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.text_inverse
+          : light.text_inverse;
+ 
+  static Color text_secondary(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.text_secondary
+          : light.text_secondary;
+ 
+  static Color test_tertiary(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.test_tertiary
+          : light.test_tertiary;
+ 
+  static Color semantic_sucess(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.semantic_sucess
+          : light.semantic_sucess;
+ 
+  static Color semantaic_sucess_radius(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.semantaic_sucess_radius
+          : light.semantaic_sucess_radius;
+ 
+  static Color semantic_warning(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.semantic_warning
+          : light.semantic_warning;
+ 
+  static Color semantic_warning_radius(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.semantic_warning_radius
+          : light.semantic_warning_radius;
+ 
+  static Color semantic_error(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.semantic_error
+          : light.semantic_error;
+ 
+  static Color semantic_error_radius(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.semantic_error_radius
+          : light.semantic_error_radius;
+ 
+  static Color semantic_info(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.semantic_info
+          : light.semantic_info;
+ 
+  static Color semantic_info_radius(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.semantic_info_radius
+          : light.semantic_info_radius;
+ 
+  static Color input_field_default(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.input_field_default
+          : light.input_field_default;
+ 
+  static Color input_field_border(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.input_field_border
+          : light.input_field_border;
+ 
+  static Color input_feld_default_text(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.input_feld_default_text
+          : light.input_feld_default_text;
+ 
+  static Color button_text_white(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.button_text_white
+          : light.button_text_white;
+ 
+  static Color button_text_black(BuildContext context) =>
 
-  // --- Dark Theme ---
-  static final ThemeData darkTheme = ThemeData(
-    brightness: Brightness.dark,
-    primaryColor: const Color(0xFF4A90E2),
-    scaffoldBackgroundColor: const Color(0xFF121212),
-    colorScheme: const ColorScheme.dark(
-      primary: Color(0xFF4A90E2),
-      secondary: Color(0xFF48D1CC),
-      surface: Color(0xFF1E1E1E),
-      background: Color(0xFF121212),
-      error: Color(0xFFCF6679),
-      onPrimary: Colors.black,
-      onSecondary: Colors.black,
-      onSurface: Colors.white,
-      onBackground: Colors.white,
-      onError: Colors.black,
-    ),
-    appBarTheme: const AppBarTheme(
-      color: Color(0xFF1E1E1E),
-      elevation: 2,
-      iconTheme: IconThemeData(color: Colors.white),
-      titleTextStyle: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
-    ),
-    // cardTheme: CardTheme(
-    //   color: const Color(0xFF1E1E1E),
-    //   elevation: 1,
-    //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-    //   margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-    // ),
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: const Color(0xFF4A90E2),
-        foregroundColor: Colors.white,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-      ),
-    ),
-    inputDecorationTheme: InputDecorationTheme(
-      border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8),
-        borderSide: const BorderSide(color: Color(0xFF4A90E2)),
-      ),
-    ),
-    floatingActionButtonTheme: const FloatingActionButtonThemeData(
-      backgroundColor: Color(0xFF4A90E2),
-    ),
-  );
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.button_text_black
+          : light.button_text_black;
+ 
+  static Color primary_shadow_1(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.primary_shadow_1
+          : light.primary_shadow_1;
+ 
+  static Color primary_shadow_2(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.primary_shadow_2
+          : light.primary_shadow_2;
+ 
+  static Color secondary_shadow_1(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.secondary_shadow_1
+          : light.secondary_shadow_1;
+ 
+  static Color secondary_shadow_2(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.secondary_shadow_2
+          : light.secondary_shadow_2;
+ 
+  static Color popup_shadow(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.popup_shadow
+          : light.popup_shadow;
+ 
+  static Color container_box(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.container_box
+          : light.container_box;
+
 }
+
+ 

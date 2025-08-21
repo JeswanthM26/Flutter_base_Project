@@ -1,4 +1,4 @@
-import 'package:flutter_base_pro/models/product.dart';
+import 'package:Retail_Application/models/product.dart';
 
 abstract class ProductRepository {
   Future<List<Product>> getProducts();

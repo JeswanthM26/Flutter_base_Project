@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base_pro/ui/screens/product_screen.dart';
-import 'package:flutter_base_pro/ui/screens/stock_screen.dart';
-import 'package:flutter_base_pro/ui/screens/weather_screen.dart';
+import 'package:Retail_Application/ui/screens/product_screen.dart';
+import 'package:Retail_Application/ui/screens/stock_screen.dart';
+import 'package:Retail_Application/ui/screens/weather_screen.dart';
 
 void main() {
   runApp(const MyApp());
