@@ -138,8 +138,8 @@ class _AppzButtonState extends State<AppzButton> {
       content.add(CustomText(
         label: widget.label,
         color: txtColor,
-        fontWeight: ApzFontWeight.titlesSemibold,
-        fontSize: 28,
+        fontWeight: ApzFontWeight.buttonTextMedium,
+        fontSize: fontSize,
       ));
       if (widget.iconTrailing != null) {
         content.add(Padding(
