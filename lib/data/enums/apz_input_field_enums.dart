@@ -1,0 +1,4 @@
+enum AmountFormatType {
+  lakhs,
+  millions,
+}
