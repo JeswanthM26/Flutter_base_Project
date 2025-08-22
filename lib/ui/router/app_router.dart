@@ -1,27 +1,31 @@
+import 'package:Retail_Application/ui/screens/onboarding_screen.dart';
+import 'package:Retail_Application/ui/screens/splash.dart';
 import 'package:Retail_Application/ui/screens/product_screen.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter/foundation.dart';
 
-// GoRouter configuration
-final GoRouter router = GoRouter(
-  initialLocation: '/products',
-  routes: [
-    GoRoute(
-      path: '/products',
-      name: 'products',
-      builder: (context, state) => const ProductScreen(),
-      // Example of a future nested route:
-      // routes: [
-      //   GoRoute(
-      //     path: ':id', // e.g., /products/1
-      //     name: 'product-details',
-      //     builder: (context, state) {
-      //       final id = state.pathParameters['id']!;
-      //       return ProductDetailsScreen(id: id);
-      //     },
-      //   ),
-      // ],
-    ),
-  ],
-  // Optional: Add an error builder for handling 404 pages
-  // errorBuilder: (context, state) => const NotFoundScreen(),
-);
+class AppRouter {
+  static final GoRouter router = GoRouter(
+    initialLocation: '/', // Splash screen remains the initial route
+    routes: [
+      GoRoute(
+        path: '/',
+        builder: (context, state) => const FullScreenSplash(),
+      ),
+      GoRoute(
+        path: '/onboarding',
+        builder: (context, state) {
+          if (kIsWeb) {
+            // On web, skip onboarding and go to products instead
+            return const ProductScreen();
+          }
+          return const OnboardingScreen();
+        },
+      ),
+      GoRoute(
+        path: '/products',
+        builder: (context, state) => const ProductScreen(),
+      ),
+    ],
+  );
+}

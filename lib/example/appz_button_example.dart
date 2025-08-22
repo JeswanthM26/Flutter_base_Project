@@ -19,8 +19,7 @@ class AppzButtonExample extends StatelessWidget {
             const SizedBox(height: 16),
             const Text('Small'),
             AppzButton(
-              label:
-                  'Primary Small butoon is a large buttg vcffvgfhhbhfb gfgrgyt',
+              label: 'Primary Small butoon ',
               appearance: AppzButtonAppearance.primary,
               size: AppzButtonSize.small,
               onPressed: () {},
@@ -44,9 +43,11 @@ class AppzButtonExample extends StatelessWidget {
             const SizedBox(height: 16),
             const Text('With Trailing Icon'),
             AppzButton(
-              label: 'Icon',
+              // label: 'Icon',
+              iconOnly: Icons.check,
               appearance: AppzButtonAppearance.primary,
-              iconTrailing: Icons.arrow_forward,
+              // iconTrailing: Icons.arrow_forward,
+              //size: AppzButtonSize.large,
               onPressed: () {},
             ),
             const SizedBox(height: 16),
@@ -91,7 +92,7 @@ class AppzButtonExample extends StatelessWidget {
             AppzButton(
               label: 'Primary Disabled',
               appearance: AppzButtonAppearance.primary,
-              size: AppzButtonSize.large,
+              size: AppzButtonSize.small,
               disabled: true,
               onPressed: () {},
             ),

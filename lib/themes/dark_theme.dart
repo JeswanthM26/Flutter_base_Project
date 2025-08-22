@@ -48,8 +48,8 @@ const Color button_text_black = Color(0xFF000108);
 const Color primary_shadow_1 = Color(0x0A28293D);
 const Color primary_shadow_2 = Color(0x29606170);
 
-const Color secondary_shadow_1 = Color(0xFF28293D);
-const Color secondary_shadow_2 = Color(0xFF606170);
+const Color secondary_shadow_1 = Color(0x0A28293D);
+const Color secondary_shadow_2 = Color(0x29606170);
 
 const Color popup_shadow = Color(0x29000108);
 

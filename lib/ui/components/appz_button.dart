@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:Retail_Application/themes/apz_app_themes.dart';
 
 class AppzButton extends StatefulWidget {
-  final String label;
+  final String? label;
   final AppzButtonAppearance appearance;
   final AppzButtonSize size;
   final bool disabled;
@@ -20,7 +20,7 @@ class AppzButton extends StatefulWidget {
 
   const AppzButton({
     Key? key,
-    required this.label,
+    this.label,
     this.appearance = AppzButtonAppearance.primary,
     this.size = AppzButtonSize.large,
     this.disabled = false,
@@ -135,12 +135,15 @@ class _AppzButtonState extends State<AppzButton> {
           child: _buildIcon(widget.iconLeading!, txtColor, fontSize),
         ));
       }
-      content.add(CustomText(
-        label: widget.label,
-        color: txtColor,
-        fontWeight: ApzFontWeight.buttonTextMedium,
-        fontSize: fontSize,
-      ));
+      if (widget.label != null) {
+        content.add(CustomText(
+          label: widget.label!,
+          color: txtColor,
+          fontWeight: ApzFontWeight.buttonTextMedium,
+          fontSize: fontSize,
+        ));
+      }
+
       if (widget.iconTrailing != null) {
         content.add(Padding(
           padding: const EdgeInsets.only(left: 8),
@@ -204,7 +207,7 @@ class _AppzButtonState extends State<AppzButton> {
           ),
           child: TextButton(
             style: TextButton.styleFrom(
-              padding: buttonPadding,
+              padding: buttonPaddings[widget.size]!,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(buttonCornerRadius),
               ),
