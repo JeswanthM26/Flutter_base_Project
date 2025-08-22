@@ -3,6 +3,7 @@ import 'package:Retail_Application/data/enums/apz_font_weight.dart';
 import 'package:Retail_Application/themes/apz_app_themes.dart';
 import 'package:Retail_Application/themes/common_properties.dart';
 
+<<<<<<< HEAD
 // class CustomText extends StatelessWidget {
 //   final String text;
 //   final ApzFontWeight? fontWeight;
@@ -43,13 +44,22 @@ import 'package:Retail_Application/themes/common_properties.dart';
 
 class CustomText extends StatelessWidget {
   final String label;  // Renamed from text to label
+=======
+class CustomText extends StatelessWidget {
+  final String label; // Renamed from text to label
+>>>>>>> b0d715b80c39b6d287cacac173e1614bc8e2965b
   final ApzFontWeight? fontWeight;
   final double? fontSize;
   final Color? color;
 
   const CustomText({
     super.key,
+<<<<<<< HEAD
     required this.label,  // required named parameter
+=======
+    // required named parameter
+    required this.label,
+>>>>>>> b0d715b80c39b6d287cacac173e1614bc8e2965b
     this.fontWeight,
     this.fontSize,
     this.color,
@@ -65,7 +75,11 @@ class CustomText extends StatelessWidget {
     final Color finalColor = color ?? AppColors.primary_text(context);
 
     return Text(
+<<<<<<< HEAD
       label,  // use label instead of text
+=======
+      label, // use label instead of text
+>>>>>>> b0d715b80c39b6d287cacac173e1614bc8e2965b
       style: TextStyle(
         color: finalColor,
         fontSize: finalFontSize,
