@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import 'package:flutter/material.dart';
 
 // Typography
@@ -11,9 +10,7 @@ const EdgeInsets inputFieldContentPadding = EdgeInsets.symmetric(horizontal: 16.
 // Base TextStyles (colors will be applied in the component)
 const TextStyle inputFieldHintStyle = TextStyle(fontWeight: FontWeight.w400, fontSize: 13);
 const TextStyle inputFieldLabelStyle = TextStyle(fontWeight: FontWeight.w400, fontSize: 12);
-=======
-import 'package:Retail_Application/data/enums/apz_buttons_enum.dart';
-import 'package:flutter/material.dart';
+
 
 const double buttonCornerRadius = 20.0;
 
@@ -74,4 +71,4 @@ const double alert_iconSpacing = 10;
 const double alert_buttonSpacing = 8;
 const double alert_borderWidth = 1;
 const double alert_iconBorderRadius = 999;
->>>>>>> b0d715b80c39b6d287cacac173e1614bc8e2965b
+
