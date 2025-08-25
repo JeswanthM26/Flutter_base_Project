@@ -1,8 +1,8 @@
-import 'package:Retail_Application/models/product.dart';
+import 'package:Retail_Application/models/apz_product.dart';
 
 abstract class ProductRepository {
-  Future<List<Product>> getProducts();
-  Future<Product> createProduct(Product product);
-  Future<Product> updateProduct(int id, Product product);
+  Future<List<ApzProduct>> getProducts();
+  Future<ApzProduct> createProduct(ApzProduct product);
+  Future<ApzProduct> updateProduct(int id, ApzProduct product);
   Future<void> deleteProduct(int id);
 }

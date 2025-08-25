@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:Retail_Application/core/utils/apz_mock_service.dart';
-import 'package:Retail_Application/models/product.dart';
+import 'package:Retail_Application/models/apz_product.dart';
 import 'package:Retail_Application/data/repositories/apz_product.dart';
 
 class ProductMockRepository implements ProductRepository {
@@ -15,29 +15,29 @@ class ProductMockRepository implements ProductRepository {
   }
 
   final MockService _mockService = MockService();
-  final List<Product> _products = [];
+  final List<ApzProduct> _products = [];
   bool _isInitialized = false;
 
   Future<void> _init() async {
     if (!_isInitialized) {
       final data = await _mockService.loadMock("mock/products/get_products.json");
-      final initialProducts = (data as List).map((json) => Product.fromJson(json)).toList();
+      final initialProducts = (data as List).map((json) => ApzProduct.fromJson(json)).toList();
       _products.addAll(initialProducts);
       _isInitialized = true;
     }
   }
 
   @override
-  Future<List<Product>> getProducts() async {
+  Future<List<ApzProduct>> getProducts() async {
     await _init(); // Ensure initialized
     // Return a copy to prevent external modification
-    return Future.value(List<Product>.from(_products));
+    return Future.value(List<ApzProduct>.from(_products));
   }
 
   @override
-  Future<Product> createProduct(Product product) async {
+  Future<ApzProduct> createProduct(ApzProduct product) async {
     await _init();
-    final newProduct = Product(
+    final newProduct = ApzProduct(
       // Create a new product with a random ID
       id: Random().nextInt(1000) + 100, // Random ID > 100
       title: product.title,
@@ -51,12 +51,12 @@ class ProductMockRepository implements ProductRepository {
   }
 
   @override
-  Future<Product> updateProduct(int id, Product product) async {
+  Future<ApzProduct> updateProduct(int id, ApzProduct product) async {
     await _init();
     final index = _products.indexWhere((p) => p.id == id);
     if (index != -1) {
       // Replace the old product with the new data
-      _products[index] = Product(
+      _products[index] = ApzProduct(
         id: id, // Keep the original ID
         title: product.title,
         price: product.price,

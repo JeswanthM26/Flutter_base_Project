@@ -1,6 +1,6 @@
 import 'package:Retail_Application/core/configs/apz_app_config.dart';
 import 'package:Retail_Application/data/repositories/apz_product.dart';
-import 'package:Retail_Application/models/product.dart';
+import 'package:Retail_Application/models/apz_product.dart';
 import 'package:flutter/material.dart';
 class ProductScreen extends StatefulWidget {
   const ProductScreen({super.key});
@@ -13,7 +13,7 @@ class _ProductScreenState extends State<ProductScreen> {
   late final ProductRepository _repository;
   bool _isLoading = false;
   String? _error;
-  List<Product> _products = [];
+  List<ApzProduct> _products = [];
 
   @override
   // void initState() {
@@ -41,7 +41,7 @@ class _ProductScreenState extends State<ProductScreen> {
   }
 
   // --- CRUD Methods ---
-  Future<void> _createProduct(Product product) async {
+  Future<void> _createProduct(ApzProduct product) async {
     setState(() => _isLoading = true);
     try {
       final createdProduct = await _repository.createProduct(product);
@@ -54,7 +54,7 @@ class _ProductScreenState extends State<ProductScreen> {
     }
   }
 
-  Future<void> _updateProduct(int id, Product product) async {
+  Future<void> _updateProduct(int id, ApzProduct product) async {
     setState(() => _isLoading = true);
     try {
       final updatedProduct = await _repository.updateProduct(id, product);
@@ -91,7 +91,8 @@ class _ProductScreenState extends State<ProductScreen> {
     ));
   }
 
-  void _showDeleteConfirmationDialog(Product product) {
+
+  void _showDeleteConfirmationDialog(ApzProduct product) {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -111,7 +112,7 @@ class _ProductScreenState extends State<ProductScreen> {
     );
   }
 
-  void _showProductFormDialog({Product? product}) {
+  void _showProductFormDialog({ApzProduct? product}) {
     final formKey = GlobalKey<FormState>();
     final titleController = TextEditingController(text: product?.title);
     final priceController = TextEditingController(text: product?.price.toString());
@@ -159,7 +160,7 @@ class _ProductScreenState extends State<ProductScreen> {
             ElevatedButton(
               onPressed: () {
                 if (formKey.currentState!.validate()) {
-                  final productData = Product(
+                  final productData = ApzProduct(
                     id: product?.id, // Keep original ID for updates
                     title: titleController.text,
                     price: double.parse(priceController.text),

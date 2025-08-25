@@ -4,10 +4,10 @@ import 'package:Retail_Application/data/enums/apz_api_enums.dart';
 // import 'package:http/http.dart' as http;
 
 
-class WeatherRepository {
+class ApzWeatherRepository {
   final ApiService apiService;
 
-  WeatherRepository(this.apiService);
+  ApzWeatherRepository(this.apiService);
 
   Future<Map<String, dynamic>> getWeather(String city) async {
     final response = await apiService.request(

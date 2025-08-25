@@ -2,12 +2,12 @@
 import 'package:Retail_Application/core/configs/apz_app_config.dart';
 import 'package:Retail_Application/core/utils/apz_api_service.dart';
 import 'package:Retail_Application/data/enums/apz_api_enums.dart';
-import 'package:Retail_Application/models/stock_model.dart';
+import 'package:Retail_Application/models/apz_stock_model.dart';
 
 class StockRepository {
   final ApiService apiService = ApiService();
 
-  Future<List<StockModel>> fetchTopGainersLosers() async {
+  Future<List<ApzStockModel>> fetchTopGainersLosers() async {
     if (AppConfig.isMock) {
       // If mock enabled, load from local JSON
       // For now, just return an empty list or parse mock file
@@ -26,7 +26,7 @@ class StockRepository {
       );
 
       final gainers = response["top_gainers"] as List<dynamic>? ?? [];
-      return gainers.map((e) => StockModel.fromJson(e)).toList();
+      return gainers.map((e) => ApzStockModel.fromJson(e)).toList();
     }
   }
 }

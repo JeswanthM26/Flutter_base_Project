@@ -1,4 +1,5 @@
 import 'package:Retail_Application/data/enums/apz_checkbox_enums.dart';
+import 'package:Retail_Application/models/apz_checkboxItem.dart';
 import 'package:Retail_Application/ui/components/apz_checkbox.dart';
 import 'package:flutter/material.dart';
 
@@ -21,21 +22,21 @@ class _AppzCheckboxExampleState extends State<AppzCheckboxExample> {
       ValueNotifier<List<int>>([]);
 
   // Group items for checkbox examples
-  final List<CheckboxItem> _preferencesGroupItems = [
-    CheckboxItem(label: 'Email notifications', value: "yes"),
-    CheckboxItem(label: 'Push notifications', value: "yes"),
-    CheckboxItem(label: 'SMS notifications', value: "no"),
-    CheckboxItem(label: 'Email notifications', value: "yes"),
-    CheckboxItem(label: 'Push notifications', value: "yes"),
-    CheckboxItem(label: 'SMS notifications', value: "no"),
-    CheckboxItem(label: 'Email notifications', value: "yes"),
-    CheckboxItem(label: 'Push notifications', value: "yes"),
-    CheckboxItem(label: 'SMS notifications', value: "no"),
+  final List<ApzCheckboxItem> _preferencesGroupItems = [
+    ApzCheckboxItem(label: 'Email notifications', value: "yes"),
+    ApzCheckboxItem(label: 'Push notifications', value: "yes"),
+    ApzCheckboxItem(label: 'SMS notifications', value: "no"),
+    ApzCheckboxItem(label: 'Email notifications', value: "yes"),
+    ApzCheckboxItem(label: 'Push notifications', value: "yes"),
+    ApzCheckboxItem(label: 'SMS notifications', value: "no"),
+    ApzCheckboxItem(label: 'Email notifications', value: "yes"),
+    ApzCheckboxItem(label: 'Push notifications', value: "yes"),
+    ApzCheckboxItem(label: 'SMS notifications', value: "no"),
   ];
-  final List<CheckboxItem> _preferencesGroupItems2 = [
-    CheckboxItem(label: 'item1', value: "no"),
-    CheckboxItem(label: 'item2', value: "no"),
-    CheckboxItem(label: 'item3', value: "no"),
+  final List<ApzCheckboxItem> _preferencesGroupItems2 = [
+    ApzCheckboxItem(label: 'item1', value: "no"),
+    ApzCheckboxItem(label: 'item2', value: "no"),
+    ApzCheckboxItem(label: 'item3', value: "no"),
   ];
 
   @override

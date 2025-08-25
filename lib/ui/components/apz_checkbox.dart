@@ -1,16 +1,13 @@
 // apz_checkbox.dart
 import 'package:Retail_Application/data/enums/apz_checkbox_enums.dart';
+import 'package:Retail_Application/models/apz_checkboxItem.dart';
 import 'package:Retail_Application/ui/components/apz_text.dart';
 import 'package:flutter/material.dart';
 import 'package:Retail_Application/themes/common_properties.dart';
 import 'package:Retail_Application/themes/apz_app_themes.dart';
 import 'package:Retail_Application/data/enums/apz_font_weight.dart';
 
-class CheckboxItem {
-  final String label;
-  final String value; // "yes" or "no"
-  const CheckboxItem({required this.label, required this.value});
-}
+
 
 class ApzCheckboxController extends ChangeNotifier {
   String _value = "no";
@@ -70,7 +67,7 @@ class ApzCheckbox extends StatefulWidget {
   final CheckboxAlignment alignment;
   final CheckboxVariant variant;
   final bool enabled;
-  final List<CheckboxItem>? groupItems;
+  final List<ApzCheckboxItem>? groupItems;
   final ValueNotifier<List<int>>? selectedIndicesNotifier;
   final ApzCheckboxController? controller;
   final VoidCallback? onTap;
