@@ -224,4 +224,20 @@ class AppColors {
       Theme.of(context).brightness == Brightness.dark
           ? dark.searchbarBorderLine
           : light.searchbarBorderLine;
+  static Color Toggle_default(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.Toggle_default
+          : light.Toggle_default;
+  static Color Toggle_hover(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.Toggle_hover
+          : light.Toggle_hover;
+  static Color Toggle_disabled(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.Toggle_disabled
+          : light.Toggle_disabled;
+  static Color semantic_shadow(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.semantic_shadow
+          : light.semantic_shadow;
 }

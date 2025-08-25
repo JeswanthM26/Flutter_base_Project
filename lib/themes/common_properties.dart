@@ -84,3 +84,27 @@ const EdgeInsets searchbar_padding =
 
 const double searchbar_iconSize = 18.0; // 18x18
 const double searchbar_fontSize = 12.0;
+
+const double toggleSmallWidth = 36;
+const double toggleSmallHeight = 20;
+const double toggleSmallThumbSize = 16;
+const double toggleLargeWidth = 44;
+const double toggleLargeHeight = 24;
+const double toggleLargeThumbSize = 20;
+const double toggleCornerRadius = 12;
+const double togglePaddingHorizontal = 2;
+const double togglePaddingVertical = 2;
+const double toggleBorderWidth = 2;
+const double toggleFontSize = 14;
+
+const double toast_width = 343.0;
+const double toast_borderRadius = 12.0; // optionally add if you want as well
+const EdgeInsets toast_padding =
+    EdgeInsets.symmetric(horizontal: 16, vertical: 12);
+const double toast_iconSize = 40.0;
+const double toast_titleFontSize = 16.0;
+const double toast_messageFontSize = 13.0;
+const double toast_spacing = 16.0; // spacing between icon and text
+const Offset toastShadowOffset = Offset(0, 6);
+const double toastShadowBlurRadius = 30;
+const double toastShadowSpreadRadius = 0;
