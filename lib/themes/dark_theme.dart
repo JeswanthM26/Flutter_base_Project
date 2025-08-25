@@ -71,3 +71,9 @@ const List<Color> searchbarBorderLine = <Color>[
   Color(0x14FFFFFF), // White with 8% opacity
   Color(0x4DB3E0FF), // Light Blue with 30% opacity
 ];
+
+const Color Toggle_default = Color(0xFF1C41B0);
+const Color Toggle_hover = Color(0xFF0073C0);
+const Color Toggle_disabled = Color(0xFFE5E5E5);
+
+const Color semantic_shadow = Color(0x1F000000);

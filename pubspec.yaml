@@ -43,6 +43,7 @@ flutter:
     - assets/images/
     - assets/mock/
     - assets/alerts/
+    - assets/toast/
     - mock/
     - mock/products/
     - mock/mock_datas/
