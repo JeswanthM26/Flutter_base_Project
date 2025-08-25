@@ -4,7 +4,7 @@ import 'package:Retail_Application/ui/components/apz_text.dart';
 import 'package:flutter/material.dart';
 import 'package:Retail_Application/themes/apz_app_themes.dart';
 
-class AppzRadioItem extends StatefulWidget {
+class ApzRadioItem extends StatefulWidget {
   final String label;
   final List<String> options;
   final String? defaultValue;
@@ -13,7 +13,7 @@ class AppzRadioItem extends StatefulWidget {
   final bool showError;
   final ValueChanged<String>? onChanged;
 
-  const AppzRadioItem({
+  const ApzRadioItem({
     Key? key,
     required this.label,
     required this.options,
@@ -25,10 +25,10 @@ class AppzRadioItem extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<AppzRadioItem> createState() => _AppzRadioItemState();
+  State<ApzRadioItem> createState() => _AppzRadioItemState();
 }
 
-class _AppzRadioItemState extends State<AppzRadioItem> {
+class _AppzRadioItemState extends State<ApzRadioItem> {
   String? _selected;
 
   @override
@@ -57,14 +57,14 @@ class _AppzRadioItemState extends State<AppzRadioItem> {
         Row(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            CustomText(
+            ApzText(
               label: widget.label,
               color: AppColors.secondary_text(context),
               fontWeight: ApzFontWeight.labelRegular,
               fontSize: radio_label_fontSize,
             ),
             if (widget.isMandatory)
-              CustomText(
+              ApzText(
                 label: ' *',
                 color: AppColors.semantic_error(context),
                 fontWeight: ApzFontWeight.labelRegular,
@@ -130,7 +130,7 @@ class _AppzRadioItemState extends State<AppzRadioItem> {
                     ),
                   ),
                   SizedBox(width: radio_spacing),
-                  CustomText(
+                  ApzText(
                     label: option,
                     color: textColor,
                     fontWeight: ApzFontWeight.labelRegular,
@@ -146,7 +146,7 @@ class _AppzRadioItemState extends State<AppzRadioItem> {
         if (showError)
           Padding(
             padding: const EdgeInsets.only(top: 6.0),
-            child: CustomText(
+            child: ApzText(
               label: 'Please select an option',
               color: AppColors.semantic_error(context),
               fontWeight: ApzFontWeight.labelRegular,

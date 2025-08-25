@@ -1,6 +1,6 @@
 import 'package:Retail_Application/data/enums/apz_buttons_enum.dart';
 import 'package:flutter/material.dart';
-import 'package:Retail_Application/ui/components/appz_button.dart';
+import 'package:Retail_Application/ui/components/apz_button.dart';
 
 class AppzButtonExample extends StatelessWidget {
   const AppzButtonExample({super.key});
@@ -18,43 +18,43 @@ class AppzButtonExample extends StatelessWidget {
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             const SizedBox(height: 16),
             const Text('Small'),
-            AppzButton(
+            ApzButton(
               label: 'Primary Small butoon ',
-              appearance: AppzButtonAppearance.primary,
-              size: AppzButtonSize.small,
+              appearance: ApzButtonAppearance.primary,
+              size: ApzButtonSize.small,
               onPressed: () {},
             ),
             const SizedBox(height: 16),
             const Text('Large'),
-            AppzButton(
+            ApzButton(
               label: 'Primary Large',
-              appearance: AppzButtonAppearance.primary,
-              size: AppzButtonSize.large,
+              appearance: ApzButtonAppearance.primary,
+              size: ApzButtonSize.large,
               onPressed: () {},
             ),
             const SizedBox(height: 16),
             const Text('With Leading Icon'),
-            AppzButton(
+            ApzButton(
               label: 'Icon',
-              appearance: AppzButtonAppearance.primary,
+              appearance: ApzButtonAppearance.primary,
               iconLeading: Icons.add,
               onPressed: () {},
             ),
             const SizedBox(height: 16),
             const Text('With Trailing Icon'),
-            AppzButton(
+            ApzButton(
               // label: 'Icon',
               iconOnly: Icons.check,
-              appearance: AppzButtonAppearance.primary,
+              appearance: ApzButtonAppearance.primary,
               // iconTrailing: Icons.arrow_forward,
               //size: AppzButtonSize.large,
               onPressed: () {},
             ),
             const SizedBox(height: 16),
             const Text('Disabled'),
-            AppzButton(
+            ApzButton(
               label: 'Disabled',
-              appearance: AppzButtonAppearance.primary,
+              appearance: ApzButtonAppearance.primary,
               disabled: true,
               onPressed: () {},
             ),
@@ -62,25 +62,25 @@ class AppzButtonExample extends StatelessWidget {
             const Text('Secondary Buttons',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             const SizedBox(height: 16),
-            AppzButton(
+            ApzButton(
               label: 'Secondary',
-              appearance: AppzButtonAppearance.secondary,
+              appearance: ApzButtonAppearance.secondary,
               onPressed: () {},
             ),
             const SizedBox(height: 32),
             const Text('Tertiary Buttons',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             const SizedBox(height: 16),
-            AppzButton(
+            ApzButton(
               label: 'Tertiary',
-              appearance: AppzButtonAppearance.tertiary,
+              appearance: ApzButtonAppearance.tertiary,
               onPressed: () {},
             ),
             const SizedBox(height: 16),
             const Text('Tertiary with Icon'),
-            AppzButton(
+            ApzButton(
               label: 'Tertiary',
-              appearance: AppzButtonAppearance.tertiary,
+              appearance: ApzButtonAppearance.tertiary,
               iconLeading: Icons.link,
               onPressed: () {},
               textColor: Colors.yellowAccent,
@@ -89,24 +89,24 @@ class AppzButtonExample extends StatelessWidget {
             const Text('Disabled Buttons',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             const SizedBox(height: 16),
-            AppzButton(
+            ApzButton(
               label: 'Primary Disabled',
-              appearance: AppzButtonAppearance.primary,
-              size: AppzButtonSize.small,
+              appearance: ApzButtonAppearance.primary,
+              size: ApzButtonSize.small,
               disabled: true,
               onPressed: () {},
             ),
             const SizedBox(height: 16),
-            AppzButton(
+            ApzButton(
               label: 'Secondary Disabled',
-              appearance: AppzButtonAppearance.secondary,
+              appearance: ApzButtonAppearance.secondary,
               disabled: true,
               onPressed: () {},
             ),
             const SizedBox(height: 16),
-            AppzButton(
+            ApzButton(
               label: 'Tertiary Disabled',
-              appearance: AppzButtonAppearance.tertiary,
+              appearance: ApzButtonAppearance.tertiary,
               disabled: true,
               onPressed: () {},
             ),

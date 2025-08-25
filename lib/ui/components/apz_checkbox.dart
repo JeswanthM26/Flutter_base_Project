@@ -12,7 +12,7 @@ class CheckboxItem {
   const CheckboxItem({required this.label, required this.value});
 }
 
-class AppzCheckboxController extends ChangeNotifier {
+class ApzCheckboxController extends ChangeNotifier {
   String _value = "no";
   List<int> _selectedIndices = [];
   bool _enabled = true;
@@ -62,7 +62,7 @@ class AppzCheckboxController extends ChangeNotifier {
   }
 }
 
-class AppzCheckbox extends StatefulWidget {
+class ApzCheckbox extends StatefulWidget {
   final String? value;
   final ValueNotifier<String>? valueNotifier;
   final String? label;
@@ -72,10 +72,10 @@ class AppzCheckbox extends StatefulWidget {
   final bool enabled;
   final List<CheckboxItem>? groupItems;
   final ValueNotifier<List<int>>? selectedIndicesNotifier;
-  final AppzCheckboxController? controller;
+  final ApzCheckboxController? controller;
   final VoidCallback? onTap;
 
-  const AppzCheckbox({
+  const ApzCheckbox({
     super.key,
     this.value,
     this.valueNotifier,
@@ -99,10 +99,10 @@ class AppzCheckbox extends StatefulWidget {
         );
 
   @override
-  State<AppzCheckbox> createState() => _AppzCheckboxState();
+  State<ApzCheckbox> createState() => _AppzCheckboxState();
 }
 
-class _AppzCheckboxState extends State<AppzCheckbox> {
+class _AppzCheckboxState extends State<ApzCheckbox> {
   ValueNotifier<String>? _localValueNotifier;
 
   @override
@@ -219,7 +219,7 @@ class _AppzCheckboxState extends State<AppzCheckbox> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  CustomText(
+                  ApzText(
                     label: widget.label!,
                     fontWeight: ApzFontWeight.labelRegular,
                     fontSize: checkbox_label_fontSize,
@@ -228,7 +228,7 @@ class _AppzCheckboxState extends State<AppzCheckbox> {
                         : primaryTextColor.withOpacity(0.5),
                   ),
                   SizedBox(height: 4),
-                  CustomText(
+                  ApzText(
                     label: widget.subtitle!,
                     fontWeight: ApzFontWeight.labelRegular,
                     fontSize: checkbox_subtitle_fontSize,
@@ -242,7 +242,7 @@ class _AppzCheckboxState extends State<AppzCheckbox> {
           } else {
             // Only label provided, style it like subtitle
             textContent = Expanded(
-              child: CustomText(
+              child: ApzText(
                 label: widget.label!,
                 fontWeight: ApzFontWeight.labelRegular,
                 fontSize: checkbox_subtitle_fontSize,
@@ -257,7 +257,7 @@ class _AppzCheckboxState extends State<AppzCheckbox> {
             widget.label!.trim().isNotEmpty) {
           // Group label styled as subtitle, ignore subtitle prop
           textContent = Expanded(
-            child: CustomText(
+            child: ApzText(
               label: widget.label!,
               fontWeight: ApzFontWeight.labelRegular,
               fontSize: checkbox_subtitle_fontSize,
@@ -318,7 +318,7 @@ class _AppzCheckboxState extends State<AppzCheckbox> {
         if (widget.label != null && widget.label!.trim().isNotEmpty)
           Padding(
             padding: const EdgeInsets.only(bottom: 8),
-            child: CustomText(
+            child: ApzText(
               label: widget.label!,
               fontWeight: ApzFontWeight.labelRegular,
               fontSize: checkbox_subtitle_fontSize,
@@ -388,7 +388,7 @@ class _AppzCheckboxState extends State<AppzCheckbox> {
                               : null,
                         ),
                         SizedBox(width: checkbox_spacing),
-                        CustomText(
+                        ApzText(
                           label: item.label,
                           fontWeight: ApzFontWeight.labelRegular,
                           fontSize: checkbox_label_fontSize,

@@ -11,10 +11,10 @@ class AppzCheckboxExample extends StatefulWidget {
 
 class _AppzCheckboxExampleState extends State<AppzCheckboxExample> {
   // Controllers for examples
-  final AppzCheckboxController _singleController = AppzCheckboxController();
-  final AppzCheckboxController _groupController = AppzCheckboxController();
-  final AppzCheckboxController _groupController2 =
-      AppzCheckboxController(); // Separate controller for second example
+  final ApzCheckboxController _singleController = ApzCheckboxController();
+  final ApzCheckboxController _groupController = ApzCheckboxController();
+  final ApzCheckboxController _groupController2 =
+      ApzCheckboxController(); // Separate controller for second example
 
   // ValueNotifier for group checkbox example
   final ValueNotifier<List<int>> _groupValueNotifier =
@@ -87,7 +87,7 @@ class _AppzCheckboxExampleState extends State<AppzCheckboxExample> {
             const SizedBox(height: 16),
 
             // Example 1: Using value property
-            AppzCheckbox(
+            ApzCheckbox(
               value: "yes", // Initial state
               label: 'Single checkbox using value property',
               // subtitle: 'This shows the value property pattern',
@@ -96,7 +96,7 @@ class _AppzCheckboxExampleState extends State<AppzCheckboxExample> {
             const SizedBox(height: 16),
 
             // Example 2: Using controller
-            AppzCheckbox(
+            ApzCheckbox(
               controller: _singleController,
               label: 'Single checkbox using controller',
               subtitle: 'This shows the controller pattern',
@@ -115,7 +115,7 @@ class _AppzCheckboxExampleState extends State<AppzCheckboxExample> {
             const SizedBox(height: 16),
 
             // Example 2: Using controller
-            AppzCheckbox(
+            ApzCheckbox(
               label: 'Group with controller',
               variant: CheckboxVariant.group,
               controller: _groupController2,
@@ -135,7 +135,7 @@ class _AppzCheckboxExampleState extends State<AppzCheckboxExample> {
             const SizedBox(height: 16),
 
             // Example 1: Single checkbox with onTap
-            AppzCheckbox(
+            ApzCheckbox(
               controller: _singleController,
               label: 'Single checkbox with onTap callback',
               subtitle: 'Tap to see real-time value updates',
@@ -157,7 +157,7 @@ class _AppzCheckboxExampleState extends State<AppzCheckboxExample> {
             const SizedBox(height: 16),
 
             // Example 2: Group checkbox with subtitle only
-            AppzCheckbox(
+            ApzCheckbox(
               label: 'This shows the onTap callback pattern',
               variant: CheckboxVariant.group,
               controller: _groupController,

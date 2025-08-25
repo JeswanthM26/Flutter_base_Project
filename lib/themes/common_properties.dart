@@ -1,3 +1,4 @@
+import 'package:Retail_Application/data/enums/apz_buttons_enum.dart';
 import 'package:flutter/material.dart';
 
 // Typography
@@ -10,23 +11,25 @@ const EdgeInsets inputFieldContentPadding = EdgeInsets.symmetric(horizontal: 16.
 // Base TextStyles (colors will be applied in the component)
 const TextStyle inputFieldHintStyle = TextStyle(fontWeight: FontWeight.w400, fontSize: 13);
 const TextStyle inputFieldLabelStyle = TextStyle(fontWeight: FontWeight.w400, fontSize: 12);
+const TextStyle countryCodeStyle = TextStyle(fontWeight: FontWeight.w400, fontSize: 14);
+
 
 
 const double buttonCornerRadius = 20.0;
 
-const Map<AppzButtonSize, EdgeInsets> buttonPaddings = {
-  AppzButtonSize.small: EdgeInsets.symmetric(vertical: 6, horizontal: 14),
-  AppzButtonSize.large: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+const Map<ApzButtonSize, EdgeInsets> buttonPaddings = {
+  ApzButtonSize.small: EdgeInsets.symmetric(vertical: 6, horizontal: 14),
+  ApzButtonSize.large: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
 };
 
-const Map<AppzButtonSize, double> buttonHeights = {
-  AppzButtonSize.small: 36.0,
-  AppzButtonSize.large: 44.0,
+const Map<ApzButtonSize, double> buttonHeights = {
+  ApzButtonSize.small: 36.0,
+  ApzButtonSize.large: 44.0,
 };
 
-const Map<AppzButtonSize, double> buttonFontSizes = {
-  AppzButtonSize.small: 12.0,
-  AppzButtonSize.large: 15.0,
+const Map<ApzButtonSize, double> buttonFontSizes = {
+  ApzButtonSize.small: 12.0,
+  ApzButtonSize.large: 15.0,
 };
 
 const Offset buttonShadowOffset1 = Offset(0, 2);
@@ -37,7 +40,6 @@ const Offset buttonShadowOffset2 = Offset(0, 8);
 const double buttonShadowBlurRadius2 = 16;
 const double buttonShadowSpreadRadius2 = 0;
 
-const double defaultFontSize = 14.0;
 
 const double checkbox_width = 20.0;
 const double checkbox_height = 20.0;

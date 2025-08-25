@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../ui/components/appz_alert.dart'; // Adjust path as needed
+import '../ui/components/apz_alert.dart'; // Adjust path as needed
 
 class AppzAlertExample extends StatelessWidget {
   const AppzAlertExample({Key? key}) : super(key: key);
@@ -25,12 +25,12 @@ class AppzAlertExample extends StatelessWidget {
                 onPressed: () {
                   showDialog(
                       context: context,
-                      builder: (_) => AppzAlert(
+                      builder: (_) => ApzAlert(
                             title: 'Title',
                             message:
                                 'You can insert a description for the message here. The text relates to the action that has been performed.',
-                            messageType: AppzAlertMessageType.info,
-                            alertType: AppzAlertType.primary,
+                            messageType: ApzAlertMessageType.info,
+                            alertType: ApzAlertType.primary,
                             buttons: ['LABEL', 'LABEL'],
                             onButtonPressed: (label) {
                               print('$label pressed');
@@ -44,11 +44,11 @@ class AppzAlertExample extends StatelessWidget {
                 onPressed: () {
                   showDialog(
                     context: context,
-                    builder: (_) => AppzAlert(
+                    builder: (_) => ApzAlert(
                       title: 'Error',
                       message: 'Something went wrong. Please try again.',
-                      messageType: AppzAlertMessageType.error,
-                      alertType: AppzAlertType.secondary,
+                      messageType: ApzAlertMessageType.error,
+                      alertType: ApzAlertType.secondary,
                       buttons: ['Retry', 'Cancel'],
                       onButtonPressed: _handleButtonPressed,
                     ),
@@ -61,11 +61,11 @@ class AppzAlertExample extends StatelessWidget {
                 onPressed: () {
                   showDialog(
                     context: context,
-                    builder: (_) => AppzAlert(
+                    builder: (_) => ApzAlert(
                       title: 'Information',
                       message: 'This is an informational alert.',
-                      messageType: AppzAlertMessageType.info,
-                      alertType: AppzAlertType.tertiary,
+                      messageType: ApzAlertMessageType.info,
+                      alertType: ApzAlertType.tertiary,
                       buttons: ['Got it'],
                       onButtonPressed: _handleButtonPressed,
                     ),
@@ -78,11 +78,11 @@ class AppzAlertExample extends StatelessWidget {
                 onPressed: () {
                   showDialog(
                     context: context,
-                    builder: (_) => AppzAlert(
+                    builder: (_) => ApzAlert(
                       title: 'Warning',
                       message: 'Please pay attention to this warning.',
-                      messageType: AppzAlertMessageType.warning,
-                      alertType: AppzAlertType.primary,
+                      messageType: ApzAlertMessageType.warning,
+                      alertType: ApzAlertType.primary,
                       buttons: ['Understood', 'Dismiss'],
                       onButtonPressed: _handleButtonPressed,
                     ),

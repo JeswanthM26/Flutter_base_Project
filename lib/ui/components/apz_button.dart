@@ -5,10 +5,10 @@ import 'package:Retail_Application/ui/components/apz_text.dart';
 import 'package:flutter/material.dart';
 import 'package:Retail_Application/themes/apz_app_themes.dart';
 
-class AppzButton extends StatefulWidget {
+class ApzButton extends StatefulWidget {
   final String? label;
-  final AppzButtonAppearance appearance;
-  final AppzButtonSize size;
+  final ApzButtonAppearance appearance;
+  final ApzButtonSize size;
   final bool disabled;
   final VoidCallback? onPressed;
   final IconData? iconLeading;
@@ -18,11 +18,11 @@ class AppzButton extends StatefulWidget {
   // New optional textColor parameter
   final Color? textColor;
 
-  const AppzButton({
+  const ApzButton({
     Key? key,
     this.label,
-    this.appearance = AppzButtonAppearance.primary,
-    this.size = AppzButtonSize.large,
+    this.appearance = ApzButtonAppearance.primary,
+    this.size = ApzButtonSize.large,
     this.disabled = false,
     this.onPressed,
     this.iconLeading,
@@ -35,7 +35,7 @@ class AppzButton extends StatefulWidget {
   _AppzButtonState createState() => _AppzButtonState();
 }
 
-class _AppzButtonState extends State<AppzButton> {
+class _AppzButtonState extends State<ApzButton> {
   bool _isPressed = false;
 
   void _updatePressed(bool pressed) {
@@ -47,39 +47,39 @@ class _AppzButtonState extends State<AppzButton> {
 
   Color _backgroundColor(BuildContext context) {
     // Transparent background for tertiary button always
-    if (widget.appearance == AppzButtonAppearance.tertiary) {
+    if (widget.appearance == ApzButtonAppearance.tertiary) {
       return AppColors.tertiary_button_default_background(context);
     }
 
     if (widget.disabled) {
       switch (widget.appearance) {
-        case AppzButtonAppearance.primary:
+        case ApzButtonAppearance.primary:
           return AppColors.primary_button_disabled(context);
-        case AppzButtonAppearance.secondary:
+        case ApzButtonAppearance.secondary:
           return AppColors.secondary_button_disabled(context);
-        case AppzButtonAppearance.tertiary:
+        case ApzButtonAppearance.tertiary:
           return AppColors.tertiary_button_default_background(context);
       }
     }
 
     if (_isPressed) {
       switch (widget.appearance) {
-        case AppzButtonAppearance.primary:
+        case ApzButtonAppearance.primary:
           return AppColors.primary_button_pressed(context);
-        case AppzButtonAppearance.secondary:
+        case ApzButtonAppearance.secondary:
           return AppColors.secondary_button_pressed(context);
-        case AppzButtonAppearance.tertiary:
+        case ApzButtonAppearance.tertiary:
           // No background change on pressed for tertiary
           return AppColors.tertiary_button_default_background(context);
       }
     }
 
     switch (widget.appearance) {
-      case AppzButtonAppearance.primary:
+      case ApzButtonAppearance.primary:
         return AppColors.primary_button_default(context);
-      case AppzButtonAppearance.secondary:
+      case ApzButtonAppearance.secondary:
         return AppColors.secondary_button_default(context);
-      case AppzButtonAppearance.tertiary:
+      case ApzButtonAppearance.tertiary:
         return AppColors.tertiary_button_default_background(context);
     }
   }
@@ -90,12 +90,12 @@ class _AppzButtonState extends State<AppzButton> {
       return widget.textColor!;
     }
     if (widget.disabled) {
-      return widget.appearance == AppzButtonAppearance.primary
+      return widget.appearance == ApzButtonAppearance.primary
           ? AppColors.button_text_white(context).withOpacity(0.6)
           : AppColors.button_text_black(context).withOpacity(0.6);
     }
 
-    if (widget.appearance == AppzButtonAppearance.tertiary) {
+    if (widget.appearance == ApzButtonAppearance.tertiary) {
       if (_isPressed) {
         return AppColors.tertiary_button_pressed(context);
       }
@@ -103,9 +103,9 @@ class _AppzButtonState extends State<AppzButton> {
     }
 
     switch (widget.appearance) {
-      case AppzButtonAppearance.primary:
+      case ApzButtonAppearance.primary:
         return AppColors.button_text_white(context);
-      case AppzButtonAppearance.secondary:
+      case ApzButtonAppearance.secondary:
         return AppColors.button_text_black(context);
       default:
         return AppColors.tertiary_button_default(context);
@@ -136,7 +136,7 @@ class _AppzButtonState extends State<AppzButton> {
         ));
       }
       if (widget.label != null) {
-        content.add(CustomText(
+        content.add(ApzText(
           label: widget.label!,
           color: txtColor,
           fontWeight: ApzFontWeight.buttonTextMedium,
@@ -155,7 +155,7 @@ class _AppzButtonState extends State<AppzButton> {
     // Separate layout for tertiary button - no DecoratedBox, no background decoration,
     // only content inside a GestureDetector with SizedBox for height.
     // Changed to left aligned (remove Center, align start):
-    if (widget.appearance == AppzButtonAppearance.tertiary) {
+    if (widget.appearance == ApzButtonAppearance.tertiary) {
       return GestureDetector(
         onTapDown: (_) => _updatePressed(true),
         onTapUp: (_) => _updatePressed(false),
@@ -183,11 +183,11 @@ class _AppzButtonState extends State<AppzButton> {
           decoration: BoxDecoration(
             color: bgColor,
             borderRadius: BorderRadius.circular(buttonCornerRadius),
-            boxShadow: (widget.appearance == AppzButtonAppearance.primary ||
-                    widget.appearance == AppzButtonAppearance.secondary)
+            boxShadow: (widget.appearance == ApzButtonAppearance.primary ||
+                    widget.appearance == ApzButtonAppearance.secondary)
                 ? [
                     BoxShadow(
-                      color: widget.appearance == AppzButtonAppearance.primary
+                      color: widget.appearance == ApzButtonAppearance.primary
                           ? AppColors.primary_shadow_1(context)
                           : AppColors.secondary_shadow_1(context),
                       offset: buttonShadowOffset1,
@@ -195,7 +195,7 @@ class _AppzButtonState extends State<AppzButton> {
                       spreadRadius: buttonShadowSpreadRadius1,
                     ),
                     BoxShadow(
-                      color: widget.appearance == AppzButtonAppearance.primary
+                      color: widget.appearance == ApzButtonAppearance.primary
                           ? AppColors.primary_shadow_2(context)
                           : AppColors.secondary_shadow_2(context),
                       offset: buttonShadowOffset2,

@@ -1,3 +1,3 @@
-enum AppzButtonAppearance { primary, secondary, tertiary }
+enum ApzButtonAppearance { primary, secondary, tertiary }
 
-enum AppzButtonSize { small, large }
+enum ApzButtonSize { small, large }

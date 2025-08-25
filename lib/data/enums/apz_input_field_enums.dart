@@ -3,13 +3,13 @@ enum AmountFormatType {
   millions,
 }
 
-enum AppzInputFieldAppearance {
+enum ApzInputFieldAppearance {
   primary,
   secondary,
   filled,
 }
 
-enum AppzInputFieldState {
+enum ApzInputFieldState {
   defaultState,
   error,
   disabled,
@@ -17,12 +17,12 @@ enum AppzInputFieldState {
   success,
 }
 
-enum AppzInputLabelPosition {
+enum ApzInputLabelPosition {
   top,
   left,
 }
 
-enum AppzInputValidationType {
+enum ApzInputValidationType {
   none,
   mandatory,
   email,
@@ -31,7 +31,7 @@ enum AppzInputValidationType {
   password,
 }
 
-enum AppzInputType {
+enum ApzInputType {
   text,
   multiline,
   number,

@@ -1,4 +1,4 @@
-import 'package:Retail_Application/ui/components/appz_radio.dart';
+import 'package:Retail_Application/ui/components/apz_radio.dart';
 import 'package:flutter/material.dart';
 
 class AppzRadioExample extends StatefulWidget {
@@ -20,7 +20,7 @@ class _AppzRadioExampleState extends State<AppzRadioExample> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            AppzRadioItem(
+            ApzRadioItem(
               label: 'Select an option',
               options: const ['Option 1', 'Option 2', 'Option 3'],
               defaultValue: 'Option 1',
@@ -31,7 +31,7 @@ class _AppzRadioExampleState extends State<AppzRadioExample> {
               },
             ),
             const SizedBox(height: 16),
-            AppzRadioItem(
+            ApzRadioItem(
               label: 'Another selection (disabled)',
               options: const ['Option A', 'Option B', 'Option C'],
               defaultValue: 'Option B',

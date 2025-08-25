@@ -6,7 +6,7 @@ import 'package:Retail_Application/data/enums/apz_input_field_enums.dart';
 import 'package:Retail_Application/themes/apz_app_themes.dart';
 import 'package:Retail_Application/themes/common_properties.dart';
 
-class CustomInputField extends StatefulWidget {
+class ApzInputField extends StatefulWidget {
   final String label;
   final String? hintText;
   final TextEditingController controller;
@@ -23,7 +23,7 @@ class CustomInputField extends StatefulWidget {
   final bool isMandatory;
   final bool onlyNumbers;
 
-  const CustomInputField({
+  const ApzInputField({
     super.key,
     required this.label,
     required this.controller,
@@ -43,10 +43,10 @@ class CustomInputField extends StatefulWidget {
   });
 
   @override
-  State<CustomInputField> createState() => _CustomInputFieldState();
+  State<ApzInputField> createState() => _CustomInputFieldState();
 }
 
-class _CustomInputFieldState extends State<CustomInputField> {
+class _CustomInputFieldState extends State<ApzInputField> {
   late bool _isObscured;
 
   @override

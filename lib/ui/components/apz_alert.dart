@@ -1,25 +1,25 @@
 import 'package:Retail_Application/data/enums/apz_font_weight.dart';
 import 'package:Retail_Application/themes/apz_app_themes.dart';
 import 'package:Retail_Application/themes/common_properties.dart';
-import 'package:Retail_Application/ui/components/appz_button.dart';
+import 'package:Retail_Application/ui/components/apz_button.dart';
 import 'package:Retail_Application/ui/components/apz_text.dart';
 import 'package:flutter/material.dart';
 import 'package:Retail_Application/data/enums/apz_buttons_enum.dart';
-import 'package:flutter_svg/flutter_svg.dart'; // SVG support
+import 'package:flutter_svg/flutter_svg.dart'; 
 
-enum AppzAlertMessageType { success, error, info, warning }
+enum ApzAlertMessageType { success, error, info, warning }
 
-enum AppzAlertType { primary, secondary, tertiary }
+enum ApzAlertType { primary, secondary, tertiary }
 
-class AppzAlert extends StatefulWidget {
+class ApzAlert extends StatefulWidget {
   final String title;
   final String message;
-  final AppzAlertMessageType messageType;
-  final AppzAlertType alertType;
+  final ApzAlertMessageType messageType;
+  final ApzAlertType alertType;
   final List<String> buttons;
   final Function(String)? onButtonPressed;
 
-  const AppzAlert({
+  const ApzAlert({
     Key? key,
     required this.title,
     required this.message,
@@ -33,46 +33,46 @@ class AppzAlert extends StatefulWidget {
   _AppzAlertState createState() => _AppzAlertState();
 }
 
-class _AppzAlertState extends State<AppzAlert> {
+class _AppzAlertState extends State<ApzAlert> {
   String _getIconPath() {
     switch (widget.messageType) {
-      case AppzAlertMessageType.success:
+      case ApzAlertMessageType.success:
         return 'assets/alerts/Success.svg';
-      case AppzAlertMessageType.error:
+      case ApzAlertMessageType.error:
         return 'assets/alerts/Error.svg';
-      case AppzAlertMessageType.info:
+      case ApzAlertMessageType.info:
         return 'assets/alerts/Info.svg';
-      case AppzAlertMessageType.warning:
+      case ApzAlertMessageType.warning:
         return 'assets/alerts/Alert.svg';
     }
   }
 
-  AppzButtonAppearance _getButtonAppearance(
-      AppzAlertType type, int buttonIndex) {
+  ApzButtonAppearance _getButtonAppearance(
+      ApzAlertType type, int buttonIndex) {
     switch (type) {
-      case AppzAlertType.primary:
+      case ApzAlertType.primary:
         return buttonIndex == 0
-            ? AppzButtonAppearance.primary
-            : AppzButtonAppearance.secondary;
-      case AppzAlertType.secondary:
-        return AppzButtonAppearance.secondary;
-      case AppzAlertType.tertiary:
+            ? ApzButtonAppearance.primary
+            : ApzButtonAppearance.secondary;
+      case ApzAlertType.secondary:
+        return ApzButtonAppearance.secondary;
+      case ApzAlertType.tertiary:
         return buttonIndex == 0
-            ? AppzButtonAppearance.primary
-            : AppzButtonAppearance.secondary;
+            ? ApzButtonAppearance.primary
+            : ApzButtonAppearance.secondary;
     }
   }
 
   Widget _buildButtonRow() {
-    if (widget.alertType == AppzAlertType.primary) {
+    if (widget.alertType == ApzAlertType.primary) {
       // primary and secondary buttons side by side
       return Row(
         children: [
           Expanded(
-            child: AppzButton(
+            child: ApzButton(
               label: widget.buttons.isNotEmpty ? widget.buttons[0] : 'OK',
-              appearance: AppzButtonAppearance.primary,
-              size: AppzButtonSize.large,
+              appearance: ApzButtonAppearance.primary,
+              size: ApzButtonSize.large,
               onPressed: () {
                 Navigator.of(context).pop();
                 if (widget.buttons.isNotEmpty)
@@ -83,10 +83,10 @@ class _AppzAlertState extends State<AppzAlert> {
           if (widget.buttons.length > 1) SizedBox(width: alert_buttonSpacing),
           if (widget.buttons.length > 1)
             Expanded(
-              child: AppzButton(
+              child: ApzButton(
                 label: widget.buttons[1],
-                appearance: AppzButtonAppearance.secondary,
-                size: AppzButtonSize.large,
+                appearance: ApzButtonAppearance.secondary,
+                size: ApzButtonSize.large,
                 onPressed: () {
                   Navigator.of(context).pop();
                   widget.onButtonPressed?.call(widget.buttons[1]);
@@ -95,15 +95,15 @@ class _AppzAlertState extends State<AppzAlert> {
             ),
         ],
       );
-    } else if (widget.alertType == AppzAlertType.secondary) {
+    } else if (widget.alertType == ApzAlertType.secondary) {
       // only secondary button present
       return Row(
         children: [
           Expanded(
-            child: AppzButton(
+            child: ApzButton(
               label: widget.buttons.isNotEmpty ? widget.buttons[0] : 'OK',
-              appearance: AppzButtonAppearance.secondary,
-              size: AppzButtonSize.large,
+              appearance: ApzButtonAppearance.secondary,
+              size: ApzButtonSize.large,
               onPressed: () {
                 Navigator.of(context).pop();
                 if (widget.buttons.isNotEmpty)
@@ -113,15 +113,15 @@ class _AppzAlertState extends State<AppzAlert> {
           ),
         ],
       );
-    } else if (widget.alertType == AppzAlertType.tertiary) {
+    } else if (widget.alertType == ApzAlertType.tertiary) {
       // primary and secondary buttons stacked vertically one by one
       return Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          AppzButton(
+          ApzButton(
             label: widget.buttons.isNotEmpty ? widget.buttons[0] : 'OK',
-            appearance: AppzButtonAppearance.primary,
-            size: AppzButtonSize.large,
+            appearance: ApzButtonAppearance.primary,
+            size: ApzButtonSize.large,
             onPressed: () {
               Navigator.of(context).pop();
               if (widget.buttons.isNotEmpty)
@@ -130,10 +130,10 @@ class _AppzAlertState extends State<AppzAlert> {
           ),
           if (widget.buttons.length > 1) SizedBox(height: alert_buttonSpacing),
           if (widget.buttons.length > 1)
-            AppzButton(
+            ApzButton(
               label: widget.buttons[1],
-              appearance: AppzButtonAppearance.secondary,
-              size: AppzButtonSize.large,
+              appearance: ApzButtonAppearance.secondary,
+              size: ApzButtonSize.large,
               onPressed: () {
                 Navigator.of(context).pop();
                 widget.onButtonPressed?.call(widget.buttons[1]);
@@ -146,10 +146,10 @@ class _AppzAlertState extends State<AppzAlert> {
       return Row(
         children: [
           Expanded(
-            child: AppzButton(
+            child: ApzButton(
               label: widget.buttons.isNotEmpty ? widget.buttons[0] : 'OK',
-              appearance: AppzButtonAppearance.primary,
-              size: AppzButtonSize.large,
+              appearance: ApzButtonAppearance.primary,
+              size: ApzButtonSize.large,
               onPressed: () {
                 Navigator.of(context).pop();
                 if (widget.buttons.isNotEmpty)
@@ -196,7 +196,7 @@ class _AppzAlertState extends State<AppzAlert> {
                 height: alert_headerHeight,
                 child: Align(
                   alignment: Alignment.centerLeft,
-                  child: CustomText(
+                  child: ApzText(
                     label: widget.title,
                     fontWeight: ApzFontWeight.headingsBold,
                     fontSize: 16,
@@ -227,7 +227,7 @@ class _AppzAlertState extends State<AppzAlert> {
                     ),
                     SizedBox(width: alert_iconSpacing),
                     Expanded(
-                      child: CustomText(
+                      child: ApzText(
                         label: widget.message,
                         fontWeight: ApzFontWeight.bodyRegular,
                         fontSize: 14,
