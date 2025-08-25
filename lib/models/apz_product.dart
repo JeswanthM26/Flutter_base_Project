@@ -1,4 +1,4 @@
-class Product {
+class ApzProduct {
   final int? id;
   final String title;
   final double price;
@@ -6,7 +6,7 @@ class Product {
   final String image;
   final String category;
 
-  Product({
+  ApzProduct({
     this.id,
     required this.title,
     required this.price,
@@ -15,8 +15,8 @@ class Product {
     required this.category,
   });
 
-  factory Product.fromJson(Map<String, dynamic> json) {
-    return Product(
+  factory ApzProduct.fromJson(Map<String, dynamic> json) {
+    return ApzProduct(
       id: json['id'],
       title: json['title'],
       price: (json['price'] as num).toDouble(),

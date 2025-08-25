@@ -1,0 +1,22 @@
+[
+  {
+    "imageUrl": "assets/mock/image.jpg",
+    "title": "BANKING SIMPLIFIED",
+    "description": "Experience effortless transactions and simplified banking with our mobile app"
+  },
+  {
+    "imageUrl": "assets/mock/walkthrough - 6.png",
+    "title": "SECURE & FAST",
+    "description": "Your security is our priority. Fast and safe banking for you."
+  },
+  {
+    "imageUrl": "assets/mock/walkthrough - 7.png",
+    "title": "ANYTIME, ANYWHERE",
+    "description": "Access your account and services 24/7 from anywhere in the world."
+  },
+  {
+    "imageUrl": "assets/mock/walkthrough - 8.png",
+    "title": "SUSTAINABLE FINANCING",
+    "description": "Make an eco-friendly choice with our sustainable financing options."
+  }
+]
