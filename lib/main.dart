@@ -6,23 +6,59 @@ import 'package:Retail_Application/example/apz_searchbar_example.dart';
 import 'package:Retail_Application/example/apz_toast_example.dart';
 import 'package:Retail_Application/ui/components/apz_dropdown.dart';
 import 'package:Retail_Application/ui/screens/input_screen.dart';
+import 'package:Retail_Application/ui/screens/loader_example.dart';
 import 'package:flutter/material.dart';
 import 'package:Retail_Application/ui/screens/product_screen.dart';
 import 'package:Retail_Application/ui/screens/stock_screen.dart';
 import 'package:Retail_Application/ui/screens/weather_screen.dart';
 
+
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  ThemeMode _themeMode = ThemeMode.light;
+
+  void _toggleTheme() {
+    setState(() {
+      _themeMode =
+          _themeMode == ThemeMode.light ? ThemeMode.dark : ThemeMode.light;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:InputFieldPreviewScreen (),
+      themeMode: _themeMode,
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+      home:InputDemoScreen(),
+      //home: ApzLoaderExample(  onToggleTheme: _toggleTheme,),
     );
   }
 }
+
+// void main() {
+//   runApp(const MyApp());
+// }
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return const MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home:InputDemoScreen(),
+//     );
+//   }
+// }
