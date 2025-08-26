@@ -3,7 +3,7 @@ import "package:flutter/material.dart";
 const Color primary = Color(0xFF4FA8DE);
 const Color secondary = Color(0xFFB3E0FF);
 
-const Color cursor_color = Color(0xFF000108);
+const Color cursor_color = Color(0xFF8D8D95);
 
 const Color primary_button_default = Color(0xFF000108);
 const Color primary_button_pressed = Color(0xFF2A2B31);
