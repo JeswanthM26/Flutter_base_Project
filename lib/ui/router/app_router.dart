@@ -1,5 +1,4 @@
 import 'package:Retail_Application/ui/screens/onboarding_screen.dart';
-import 'package:Retail_Application/ui/screens/splash.dart';
 import 'package:Retail_Application/ui/screens/product_screen.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/foundation.dart';

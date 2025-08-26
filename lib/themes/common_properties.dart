@@ -110,3 +110,6 @@ const double toast_spacing = 16.0; // spacing between icon and text
 const Offset toastShadowOffset = Offset(0, 6);
 const double toastShadowBlurRadius = 30;
 const double toastShadowSpreadRadius = 0;
+
+const double input_label_fontsize = 14.0;
+const double input_error_fontsize = 12.0;

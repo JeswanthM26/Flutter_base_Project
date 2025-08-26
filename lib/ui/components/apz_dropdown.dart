@@ -69,7 +69,9 @@ class _ApzDropdownState extends State<ApzDropdown> {
       });
 
       Future.delayed(const Duration(milliseconds: 100), () {
-        if (mounted && !_focusNode.hasFocus && !_overlayFocusScopeNode.hasFocus) {
+        if (mounted &&
+            !_focusNode.hasFocus &&
+            !_overlayFocusScopeNode.hasFocus) {
           _hideOverlay();
         }
       });
@@ -245,8 +247,10 @@ class _ApzDropdownState extends State<ApzDropdown> {
                     decoration: BoxDecoration(
                       color: widget.enabled
                           ? AppColors.input_field_filled(context)
-                          : AppColors.input_field_filled(context).withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(inputFieldBorderRadius),
+                          : AppColors.input_field_filled(context)
+                              .withOpacity(0.1),
+                      borderRadius:
+                          BorderRadius.circular(inputFieldBorderRadius),
                       border: Border.all(
                         color: _isFocused
                             ? AppColors.input_field_border(context)
@@ -264,18 +268,26 @@ class _ApzDropdownState extends State<ApzDropdown> {
                             _selectedValue ?? widget.hintText ?? '',
                             style: inputFieldHintStyle.copyWith(
                               color: _selectedValue != null
-                                  ? AppColors.input_field_placeholder_filled(context)
-                                  : AppColors.input_field_placeholder_default(context),
-                              fontWeight: _selectedValue != null ? FontWeight.w500 : null,
+                                  ? AppColors.input_field_placeholder_filled(
+                                      context)
+                                  : AppColors.input_field_placeholder_default(
+                                      context),
+                              fontWeight: _selectedValue != null
+                                  ? FontWeight.w500
+                                  : null,
                             ),
                             overflow: TextOverflow.ellipsis,
                           ),
                         ),
-                        Icon(
-                          _overlayEntry != null
-                              ? Icons.arrow_drop_up
-                              : Icons.arrow_drop_down,
-                          color: AppColors.input_field_placeholder_default(context),
+                        Visibility(
+                          visible: false,
+                          child: Icon(
+                            _overlayEntry != null
+                                ? Icons.arrow_drop_up
+                                : Icons.arrow_drop_down,
+                            color: AppColors.input_field_placeholder_default(
+                                context),
+                          ),
                         ),
                       ],
                     ),
@@ -397,7 +409,8 @@ class _BottomSheetContentState extends State<_BottomSheetContent> {
                     borderRadius: BorderRadius.circular(8), // rounded ripple
                     child: Container(
                       width: double.infinity,
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 12),
                       decoration: BoxDecoration(
                         color: isSelected
                             ? AppColors.secondary_button_pressed(context)
@@ -429,7 +442,6 @@ class _BottomSheetContentState extends State<_BottomSheetContent> {
   }
 }
 
-
 class _DropdownOverlayContent extends StatefulWidget {
   final List<String> items;
   final bool isSearchable;
@@ -444,7 +456,8 @@ class _DropdownOverlayContent extends StatefulWidget {
   });
 
   @override
-  State<_DropdownOverlayContent> createState() => _DropdownOverlayContentState();
+  State<_DropdownOverlayContent> createState() =>
+      _DropdownOverlayContentState();
 }
 
 class _DropdownOverlayContentState extends State<_DropdownOverlayContent> {
@@ -481,13 +494,12 @@ class _DropdownOverlayContentState extends State<_DropdownOverlayContent> {
       child: Container(
         constraints: const BoxConstraints(maxHeight: 250),
         decoration: BoxDecoration(
-          color: AppColors.input_field_filled(context),
-          borderRadius: BorderRadius.circular(inputFieldBorderRadius),
-          border: Border.all(
-            color: AppColors.input_field_border(context),
-            width: 1,
-          )
-        ),
+            color: AppColors.input_field_filled(context),
+            borderRadius: BorderRadius.circular(inputFieldBorderRadius),
+            border: Border.all(
+              color: AppColors.input_field_border(context),
+              width: 1,
+            )),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -517,7 +529,8 @@ class _DropdownOverlayContentState extends State<_DropdownOverlayContent> {
                       onTap: () => widget.onItemSelected(item),
                       borderRadius: BorderRadius.circular(8),
                       child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 16, vertical: 12),
                         decoration: BoxDecoration(
                           color: isSelected
                               ? AppColors.secondary_button_pressed(context)
