@@ -26,7 +26,6 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_launcher_icons: ^0.13.1
-  flutter_native_splash: ^2.3.10
   
 
   flutter_lints: ^5.0.0
@@ -41,7 +40,6 @@ flutter:
     - assets/images/
     - assets/mock/
     - assets/alerts/
-    - assets/toast/
     - mock/
     - mock/products/
     - mock/mock_datas/
