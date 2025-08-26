@@ -12,6 +12,7 @@ dependencies:
     sdk: flutter
   smooth_page_indicator: ^1.1.0
   flutter_svg: ^1.1.6
+  phonecodes: ^0.0.4
 
   cupertino_icons: ^1.0.8
   provider: ^6.0.5

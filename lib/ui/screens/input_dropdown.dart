@@ -1,42 +1,68 @@
-import 'package:flutter/material.dart';
-import 'package:Retail_Application/ui/components/apz_input_with_dropdown.dart';
+// // phone_input_example.dart
+// import 'package:Retail_Application/ui/components/apz_input_with_dropdown.dart';
+// import 'package:flutter/material.dart';
 
-class InputWithDropdownDemoScreen extends StatefulWidget {
-  const InputWithDropdownDemoScreen({super.key});
+// class PhoneInputExample extends StatefulWidget {
+//   const PhoneInputExample({super.key});
 
-  @override
-  State<InputWithDropdownDemoScreen> createState() =>
-      _InputWithDropdownDemoScreenState();
-}
+//   @override
+//   State<PhoneInputExample> createState() => _PhoneInputExampleState();
+// }
 
-class _InputWithDropdownDemoScreenState
-    extends State<InputWithDropdownDemoScreen> {
-  final _phoneController = TextEditingController();
+// class _PhoneInputExampleState extends State<PhoneInputExample> {
+//   final _formKey = GlobalKey<FormState>();
+//   final _phoneController = TextEditingController();
 
-  @override
-  void dispose() {
-    _phoneController.dispose();
-    super.dispose();
-  }
+//   @override
+//   void dispose() {
+//     _phoneController.dispose();
+//     super.dispose();
+//   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Input with Dropdown Demo'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            InputWithDropdown(
-              label: 'Phone Number',
-              phoneController: _phoneController,
-              isMandatory: true,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
+//   void _handleSubmit() {
+//     if (_formKey.currentState?.validate() ?? false) {
+//       final enteredPhone = _phoneController.text.trim();
+
+//       if (enteredPhone.isNotEmpty) {
+//         ScaffoldMessenger.of(context).showSnackBar(
+//           SnackBar(content: Text("Submitted Phone: $enteredPhone")),
+//         );
+//       } else {
+//         ScaffoldMessenger.of(context).showSnackBar(
+//           const SnackBar(content: Text("Please enter phone number")),
+//         );
+//       }
+//     }
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: const Text("Phone Input Example")),
+//       body: Padding(
+//         padding: const EdgeInsets.all(24.0),
+//         child: Form(
+//           key: _formKey,
+//           child: Column(
+//             crossAxisAlignment: CrossAxisAlignment.start,
+//             children: [
+//               InputWithDropdown(
+//                 phoneController: _phoneController,
+//                 label: "Mobile Number",
+//                 hintText: "Enter your phone number",
+//                 isMandatory: true,
+//               ),
+//               const SizedBox(height: 24),
+//               Center(
+//                 child: ElevatedButton(
+//                   onPressed: _handleSubmit,
+//                   child: const Text("Submit"),
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
