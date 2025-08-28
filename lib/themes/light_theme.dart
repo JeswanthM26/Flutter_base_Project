@@ -42,6 +42,7 @@ const Color input_field_placeholder_default = Color(0xFF6D717F);
 const Color input_field_placeholder_filled = Color(0xFF181818);
 const Color input_field_helper_text = Color(0xFF6D717F);
 const Color input_field_helper_text_error = Color(0xFFF04248);
+const Color input_field_flag_divider = Color(0x1F6A6A6A);
 
 const Color button_text_white = Color(0xFFFFFFFF);
 const Color button_text_black = Color(0xFF000108);

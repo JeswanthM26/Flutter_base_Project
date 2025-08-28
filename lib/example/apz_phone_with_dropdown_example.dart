@@ -46,7 +46,7 @@ class _PhoneInputExampleState extends State<PhoneInputExample> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              InputWithDropdown(
+              ApzInputWithDropdown(
                 phoneController: _phoneController,
                 label: "Mobile Number",
                 hintText: "Enter your phone number",
