@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:phonecodes/phonecodes.dart'; // ✅ Use plugin for countries
+import 'package:country_flags/country_flags.dart'; // ✅ Added for flag widgets
 import 'package:Retail_Application/themes/apz_app_themes.dart';
 import 'package:Retail_Application/themes/common_properties.dart';
 import 'package:Retail_Application/ui/components/apz_searchbar.dart';
+import 'package:Retail_Application/ui/components/apz_text.dart'; // ✅ import ApzText
 
-class InputWithDropdown extends StatefulWidget {
+class ApzInputWithDropdown extends StatefulWidget {
   final TextEditingController phoneController;
   final String label;
   final String hintText;
   final bool isMandatory;
   final FormFieldValidator<String>? validator;
 
-  const InputWithDropdown({
+  const ApzInputWithDropdown({
     super.key,
     required this.phoneController,
     required this.label,
@@ -22,10 +24,10 @@ class InputWithDropdown extends StatefulWidget {
   });
 
   @override
-  State<InputWithDropdown> createState() => _InputWithDropdownState();
+  State<ApzInputWithDropdown> createState() => _InputWithDropdownState();
 }
 
-class _InputWithDropdownState extends State<InputWithDropdown> {
+class _InputWithDropdownState extends State<ApzInputWithDropdown> {
   late Country selectedCountry;
   final TextEditingController _rawNumberController =
       TextEditingController(); // ✅ keeps only digits
@@ -74,12 +76,10 @@ class _InputWithDropdownState extends State<InputWithDropdown> {
 
     return FormField<String>(
       validator: (value) {
-        // 👇 First check if external validator is provided
         if (widget.validator != null) {
           return widget.validator!(value);
         }
 
-        // 👇 Otherwise use default validation
         final text = _rawNumberController.text.trim();
         if (widget.isMandatory && text.isEmpty) {
           return 'Phone number is required';
@@ -116,14 +116,19 @@ class _InputWithDropdownState extends State<InputWithDropdown> {
                     ),
                     child: Row(
                       children: [
-                        Text(selectedCountry.flag,
-                            style: const TextStyle(fontSize: 24)),
+                        CountryFlag.fromCountryCode(
+                          selectedCountry.code,
+                          width: 24,
+                          height: 24,
+                          shape: const Circle(),
+                        ),
                         const SizedBox(width: 8),
-                        Text(
-                          '+${selectedCountry.dialCode.replaceAll("+", "")}',
-                          style: countryCodeStyle.copyWith(
-                            color: AppColors.secondary_text(context),
-                          ),
+                        ApzText(
+                          label:
+                              '+${selectedCountry.dialCode.replaceAll("+", "")}',
+                          fontSize: countryCodeStyle.fontSize,
+                          color: AppColors.secondary_text(context),
+                          fontWeight: ApzFontWeight.bodyMedium,
                         ),
                       ],
                     ),
@@ -182,13 +187,11 @@ class _InputWithDropdownState extends State<InputWithDropdown> {
             if (field.hasError)
               Padding(
                 padding: const EdgeInsets.only(top: 5, left: 8),
-                child: Text(
-                  field.errorText ?? '',
-                  style: TextStyle(
-                    color: AppColors.input_field_border_error(context),
-                    fontSize: input_error_fontsize,
-                    fontWeight: FontWeight.w400,
-                  ),
+                child: ApzText(
+                  label: field.errorText ?? '',
+                  fontSize: input_error_fontsize,
+                  color: AppColors.input_field_border_error(context),
+                  fontWeight: ApzFontWeight.bodyRegular,
                 ),
               ),
           ],
@@ -219,7 +222,7 @@ class __CountryPickerState extends State<_CountryPicker> {
   Widget build(BuildContext context) {
     return DraggableScrollableSheet(
       initialChildSize: 0.9,
-      maxChildSize: 0.9,
+      maxChildSize: 1.0,
       expand: false,
       builder: (_, scrollController) {
         return Container(
@@ -243,7 +246,6 @@ class __CountryPickerState extends State<_CountryPicker> {
                       "${item.flag} ${item.name} +${item.dialCode.replaceAll('+', '')}",
                   onFiltered: _onFiltered,
                   onTrailingPressed: () {
-                    // Reset to full list when clear is pressed
                     setState(() {
                       filteredCountries = Country.values;
                     });
@@ -258,24 +260,37 @@ class __CountryPickerState extends State<_CountryPicker> {
                   itemCount: filteredCountries.length,
                   itemBuilder: (context, index) {
                     final country = filteredCountries[index];
-                    return ListTile(
-                      onTap: () => Navigator.pop(context, country),
-                      leading: Text(
-                        country.flag,
-                        style: const TextStyle(fontSize: 24),
-                      ),
-                      title: Text(
-                        country.name,
-                        style: countryCodeStyle.copyWith(
-                          color: AppColors.primary_text(context),
+                    return Column(
+                      children: [
+                        ListTile(
+                          onTap: () => Navigator.pop(context, country),
+                          leading: CountryFlag.fromCountryCode(
+                            country.code,
+                            width: 24,
+                            height: 24,
+                            shape: const Circle(),
+                          ),
+                          title: ApzText(
+                            label: country.name,
+                            fontSize: countryCodeStyle.fontSize,
+                            color: AppColors.primary_text(context),
+                            fontWeight: ApzFontWeight.bodyMedium,
+                          ),
+                          trailing: ApzText(
+                            label: '+${country.dialCode.replaceAll("+", "")}',
+                            fontSize: countryCodeStyle.fontSize,
+                            color: AppColors.secondary_text(context),
+                            fontWeight: ApzFontWeight.bodyMedium,
+                          ),
                         ),
-                      ),
-                      trailing: Text(
-                        '+${country.dialCode.replaceAll("+", "")}',
-                        style: countryCodeStyle.copyWith(
-                          color: AppColors.secondary_text(context),
+                        Divider(
+                          color: AppColors.input_field_flag_divider(context),
+                          height: 1,
+                          thickness: 1,
+                          indent: 16, // optional for left padding
+                          endIndent: 16, // optional for right padding
                         ),
-                      ),
+                      ],
                     );
                   },
                 ),

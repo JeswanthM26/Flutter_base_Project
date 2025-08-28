@@ -240,4 +240,8 @@ class AppColors {
       Theme.of(context).brightness == Brightness.dark
           ? dark.semantic_shadow
           : light.semantic_shadow;
+  static Color input_field_flag_divider(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.input_field_flag_divider
+          : light.input_field_flag_divider;
 }
