@@ -4,6 +4,9 @@ const Color primary = Color(0xFF4FA8DE);
 const Color secondary = Color(0xFFB3E0FF);
 
 const Color cursor_color = Color(0xFFFFFFFF);
+const Color background_primary = Color(0xFF2A2A2A);
+const Color background_secondary = Color(0xFF171717);
+
 
 const Color primary_button_default = Color(0xFF000108);
 const Color primary_button_pressed = Color(0xFF2A2B31);
@@ -11,8 +14,7 @@ const Color primary_button_disabled = Color(0x1F000108);
 
 const Color secondary_button_default = Color(0xFFFFFFFF);
 const Color secondary_button_pressed = Color(0xFFCCCCCE);
-const Color secondary_button_disabled =
-    Color(0x1F000108); // 12% opacity on #000108
+const Color secondary_button_disabled =Color(0x1F000108); // 12% opacity on #000108
 
 const Color tertiary_button_default = Color(0xFF0073C0);
 const Color tertiary_button_pressed = Color(0xFF2A8ACB);

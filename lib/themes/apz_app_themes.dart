@@ -12,6 +12,16 @@ class AppColors {
       Theme.of(context).brightness == Brightness.dark
           ? dark.cursor_color
           : light.cursor_color;
+          static Color background_primary(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.background_primary
+          : light.background_primary;
+
+  static Color background_secondary(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.background_secondary
+          : light.background_secondary;
+
 
   static Color secondary(BuildContext context) =>
       Theme.of(context).brightness == Brightness.dark
