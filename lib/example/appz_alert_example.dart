@@ -1,96 +1,67 @@
+import 'package:Retail_Application/ui/components/apz_alert.dart';
 import 'package:flutter/material.dart';
-import '../ui/components/apz_alert.dart'; // Adjust path as needed
 
 class AppzAlertExample extends StatelessWidget {
-  const AppzAlertExample({Key? key}) : super(key: key);
+  const AppzAlertExample({super.key});
 
-  void _handleButtonPressed(String label) {
-    print('Button pressed: $label');
+  void _showAlert(BuildContext context, ApzAlertMessageType type) {
+    ApzAlert.show(
+      context,
+      title: "Sample ${type.name.toUpperCase()} Alert",
+      message:
+          "This is a ${type.name} alert message to demonstrate the AppzAlert component.",
+      messageType: type,
+      buttons: ["OK", "Cancel"],
+      onButtonPressed: (btn) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("You pressed: $btn")),
+        );
+      },
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('AppzAlert Example'),
-      ),
-      body: Center(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                child: const Text('Show Success Alert'),
-                onPressed: () {
-                  showDialog(
-                      context: context,
-                      builder: (_) => ApzAlert(
-                            title: 'Title',
-                            message:
-                                'You can insert a description for the message here. The text relates to the action that has been performed.',
-                            messageType: ApzAlertMessageType.info,
-                            alertType: ApzAlertType.primary,
-                            buttons: ['LABEL', 'LABEL'],
-                            onButtonPressed: (label) {
-                              print('$label pressed');
-                            },
-                          ));
-                },
-              ),
-              const SizedBox(height: 16),
-              ElevatedButton(
-                child: const Text('Show Error Alert with Two Buttons'),
-                onPressed: () {
-                  showDialog(
-                    context: context,
-                    builder: (_) => ApzAlert(
-                      title: 'Error',
-                      message: 'Something went wrong. Please try again.',
-                      messageType: ApzAlertMessageType.error,
-                      alertType: ApzAlertType.secondary,
-                      buttons: ['Retry', 'Cancel'],
-                      onButtonPressed: _handleButtonPressed,
-                    ),
-                  );
-                },
-              ),
-              const SizedBox(height: 16),
-              ElevatedButton(
-                child: const Text('Show Info Alert'),
-                onPressed: () {
-                  showDialog(
-                    context: context,
-                    builder: (_) => ApzAlert(
-                      title: 'Information',
-                      message: 'This is an informational alert.',
-                      messageType: ApzAlertMessageType.info,
-                      alertType: ApzAlertType.tertiary,
-                      buttons: ['Got it'],
-                      onButtonPressed: _handleButtonPressed,
-                    ),
-                  );
-                },
-              ),
-              const SizedBox(height: 16),
-              ElevatedButton(
-                child: const Text('Show Warning Alert'),
-                onPressed: () {
-                  showDialog(
-                    context: context,
-                    builder: (_) => ApzAlert(
-                      title: 'Warning',
-                      message: 'Please pay attention to this warning.',
-                      messageType: ApzAlertMessageType.warning,
-                      alertType: ApzAlertType.primary,
-                      buttons: ['Understood', 'Dismiss'],
-                      onButtonPressed: _handleButtonPressed,
-                    ),
-                  );
-                },
-              ),
-            ],
-          ),
+      appBar: AppBar(title: const Text("AppzAlert Demo")),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            ElevatedButton(
+              onPressed: () => _showAlert(context, ApzAlertMessageType.success),
+              child: const Text("Show Success Alert"),
+            ),
+            const SizedBox(height: 12),
+            ElevatedButton(
+              onPressed: () => _showAlert(context, ApzAlertMessageType.error),
+              child: const Text("Show Error Alert"),
+            ),
+            const SizedBox(height: 12),
+            ElevatedButton(
+              onPressed: () => _showAlert(context, ApzAlertMessageType.info),
+              child: const Text("Show Info Alert"),
+            ),
+            const SizedBox(height: 12),
+            ElevatedButton(
+              onPressed: () => _showAlert(context, ApzAlertMessageType.warning),
+              child: const Text("Show Warning Alert"),
+            ),
+            const Divider(height: 32),
+            ElevatedButton(
+              onPressed: () {
+                ApzAlert.show(
+                  context,
+                  title: "Single Button Alert",
+                  message: "This alert only has one button.",
+                  messageType: ApzAlertMessageType.info,
+                  buttons: ["Got it"],
+                );
+              },
+              child: const Text("Show Single Button Alert"),
+            ),
+          ],
         ),
       ),
     );

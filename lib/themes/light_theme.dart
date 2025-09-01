@@ -3,9 +3,12 @@ import "package:flutter/material.dart";
 const Color primary = Color(0xFF4FA8DE);
 const Color secondary = Color(0xFFB3E0FF);
 
-const Color cursor_color = Color(0xFF000108);
+const Color cursor_color = Color(0xFF8D8D95);
+const Color background_primary = Color(0xFFECF2FF);
+const Color background_secondary = Color(0xFFF8FBFF);
 
-const Color primary_button_default = Color(0xFF000108);
+
+const Color primary_button_default = Color.fromARGB(255, 23, 43, 193);
 const Color primary_button_pressed = Color(0xFF2A2B31);
 const Color primary_button_disabled =
     Color(0x1F000108); // 12% opacity on #000108
@@ -42,6 +45,7 @@ const Color input_field_placeholder_default = Color(0xFF6D717F);
 const Color input_field_placeholder_filled = Color(0xFF181818);
 const Color input_field_helper_text = Color(0xFF6D717F);
 const Color input_field_helper_text_error = Color(0xFFF04248);
+const Color input_field_flag_divider = Color(0x1F6A6A6A);
 
 const Color button_text_white = Color(0xFFFFFFFF);
 const Color button_text_black = Color(0xFF000108);

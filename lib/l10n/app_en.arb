@@ -1,0 +1,43 @@
+{
+    "appBarTitle": "ApzInputField Preview",
+    "label": "Label",
+    "placeholder": "Placeholder",
+    "textDescription": "This is a text description to provide more information.",
+    "enter4DigitOTP": "Enter 4-Digit OTP",
+    "enter6DigitOTP": "Enter 6-Digit OTP",
+    "amount": "Amount",
+    "productsApi": "Products (API)",
+    "productsMock": "Products (Mock)",
+    "deleteProductTitle": "Delete Product?",
+    "deleteProductContent": "Are you sure you want to delete '{productTitle}'?",
+    "@deleteProductContent": {
+        "description": "Confirmation message for deleting a product.",
+        "placeholders": {
+            "productTitle": {
+                "type": "String",
+                "example": "A T-Shirt"
+            }
+        }
+    },
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "editProduct": "Edit Product",
+    "createProduct": "Create Product",
+    "title": "Title",
+    "titleIsRequired": "Title is required",
+    "price": "Price",
+    "priceIsRequired": "Price is required",
+    "enterAValidPrice": "Enter a valid price",
+    "description": "Description",
+    "descriptionIsRequired": "Description is required",
+    "save": "Save",
+    "noProductsFound": "No products found. Add one!",
+    "anErrorOccurred": "An error occurred: {error}",
+    "@anErrorOccurred": {
+        "placeholders": {
+            "error": {
+                "type": "String"
+            }
+        }
+    }
+}

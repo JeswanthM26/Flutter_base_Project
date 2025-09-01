@@ -66,14 +66,16 @@ const double alert_headerHeight = 56;
 const double alert_headerPaddingHorizontal = 24;
 const double alert_headerPaddingVertical = 16;
 const double alert_contentPadding = 16;
-const double alert_buttonContainerPaddingHorizontal = 20;
-const double alert_buttonContainerPaddingVertical = 12;
+const double alert_buttonContainerPadding = 16;
 const double alert_iconContainerSize = 56;
 const double alert_iconSize = 50;
 const double alert_iconSpacing = 10;
 const double alert_buttonSpacing = 8;
 const double alert_borderWidth = 1;
 const double alert_iconBorderRadius = 999;
+const Offset alert_ShadowOffset = Offset(0, 8);
+const double alertShadowBlurRadius = 16;
+const double alertShadowSpreadRadius = 0;
 
 const double searchbar_height = 34.0;
 const double searchbar_borderRadius = 20.0;
@@ -108,3 +110,6 @@ const double toast_spacing = 16.0; // spacing between icon and text
 const Offset toastShadowOffset = Offset(0, 6);
 const double toastShadowBlurRadius = 30;
 const double toastShadowSpreadRadius = 0;
+
+const double input_label_fontsize = 14.0;
+const double input_error_fontsize = 12.0;
