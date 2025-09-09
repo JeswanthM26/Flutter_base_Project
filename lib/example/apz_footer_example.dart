@@ -94,7 +94,8 @@ class _FooterExampleScreenState extends State<FooterExampleScreen> {
       ),
       bottomNavigationBar: FooterBar(
         selectedIndex: _selectedIndex,
-        onItemSelected: _onItemSelected,
+        onItemSelected: _onItemSelected, 
+        onCenterTap: () {  },
       ),
     );
   }

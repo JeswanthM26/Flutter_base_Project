@@ -46,6 +46,8 @@ flutter:
     - mock/products/
     - mock/mock_datas/
     - assets/loader/
+    - assets/images/dark_theme.png
+    - assets/images/light_theme.png
 
   uses-material-design: true
   generate: true

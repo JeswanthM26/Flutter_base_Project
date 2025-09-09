@@ -82,3 +82,10 @@ const Color Toggle_hover = Color(0xFF0073C0);
 const Color Toggle_disabled = Color(0xFFE5E5E5);
 
 const Color semantic_shadow = Color(0x1F000000);
+// Footer Colors
+const Color footer_background = Color(0xFFFFFFFF);
+const Color footer_default = Color(0xFFAEBBD1);
+const Color footer_selected = Color(0xFF4FA8DE);
+
+// Header Colors
+const Color header_icon_color = Color(0xFF181818);

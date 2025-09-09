@@ -254,4 +254,32 @@ class AppColors {
       Theme.of(context).brightness == Brightness.dark
           ? dark.input_field_flag_divider
           : light.input_field_flag_divider;
+
+
+           static Color footer_background(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.footer_background
+          : light.footer_background;
+
+  static Color footer_default(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.footer_default
+          : light.footer_default;
+
+  static Color footer_selected(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.footer_selected
+          : light.footer_selected;
+static Color header_icon_color(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? dark.header_icon_color
+          : light.header_icon_color;
+
+
+}
+class AppImages {
+  static String backgroundImage(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark
+          ? 'assets/images/dark_theme.png'
+          : 'assets/images/light_theme.png';
 }

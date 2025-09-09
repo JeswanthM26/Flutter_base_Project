@@ -1,4 +1,6 @@
 
+import 'package:Retail_Application/themes/apz_app_themes.dart';
+import 'package:Retail_Application/themes/common_properties.dart';
 import 'package:flutter/material.dart';
 
 class FooterBar extends StatelessWidget {
@@ -9,7 +11,7 @@ class FooterBar extends StatelessWidget {
   const FooterBar({
     Key? key,
     required this.selectedIndex,
-    required this.onItemSelected,
+    required this.onItemSelected, required Null Function() onCenterTap,
   //  required this.pages,
   }) : super(key: key);
   //assert(pages.length == 5, 'Pass exactly 5 pages'),
@@ -32,21 +34,23 @@ class FooterBar extends StatelessWidget {
     required bool isSelected,
     required int index,
   }) {
-    final color = isSelected ? Colors.white : const Color(0xFFB3C4DE);
+    final color = isSelected
+        ? AppColors.footer_selected(context)
+        : AppColors.footer_default(context);
     return Expanded(
       child: InkWell(
         onTap: () => onItemSelected(index),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(iconData, color: color, size: 24),
-            const SizedBox(height: 4),
+            Icon(iconData, color: color, size: footer_iconSize),
+            const SizedBox(height: footer_spacing),
             Text(
               label,
               style: TextStyle(
                 color: color,
-                fontSize: 12,
-                fontWeight: FontWeight.w500,
+                fontSize: footer_labelFontSize,
+                fontWeight: footer_labelFontWeight,
               ),
             ),
           ],
@@ -57,8 +61,8 @@ class FooterBar extends StatelessWidget {
 
   Widget _buildCenterButton(BuildContext context, int index) {
     return Container(
-      width: 60,
-      height: 60,
+      width: footer_centerButtonSize,
+      height: footer_centerButtonSize,
       decoration: const BoxDecoration(
         shape: BoxShape.circle,
         gradient: LinearGradient(
@@ -70,13 +74,13 @@ class FooterBar extends StatelessWidget {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          onTap: () =>onItemSelected(index),
-          borderRadius: BorderRadius.circular(30),
+          onTap: () => onItemSelected(index),
+          borderRadius: BorderRadius.circular(footer_centerButtonSize / 2),
           child: const Center(
             child: Icon(
               Icons.ac_unit, // Replace with your custom icon or SVG
               color: Colors.white,
-              size: 28,
+              size: footer_centerIconSize,
             ),
           ),
         ),
@@ -87,12 +91,20 @@ class FooterBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 90,
-      padding: const EdgeInsets.only(bottom: 12, top: 12, left: 20, right: 20),
-      decoration: const BoxDecoration(
-        color: Color(0xFF282828),
-        borderRadius: BorderRadius.vertical(top: Radius.circular(34)),
-      ),
+      height: footer_height,
+      padding: footer_padding,
+      decoration: BoxDecoration(
+        color: AppColors.footer_background(context),
+        borderRadius:
+            const BorderRadius.vertical(top: Radius.circular(footer_borderRadius)),
+      
+       border: Border(
+          top: BorderSide(
+            color: AppColors.footer_default(context),
+            width: footer_borderWidth,
+          ),
+        ),
+        ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

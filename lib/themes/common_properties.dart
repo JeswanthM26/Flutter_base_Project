@@ -113,3 +113,27 @@ const double toastShadowSpreadRadius = 0;
 
 const double input_label_fontsize = 14.0;
 const double input_error_fontsize = 12.0;
+
+
+// Footer Properties
+const double footer_height = 90.0;
+const EdgeInsets footer_padding = EdgeInsets.only(bottom: 12, top: 12, left: 20, right: 20);
+const double footer_borderRadius = 34.0;
+const double footer_iconSize = 24.0;
+const double footer_labelFontSize = 12.0;
+const FontWeight footer_labelFontWeight = FontWeight.w500;
+const double footer_spacing = 4.0;
+const double footer_centerButtonSize = 60.0;
+const double footer_centerIconSize = 28.0;
+const double footer_borderWidth = 1.0;
+
+// Header Properties
+const EdgeInsets header_padding = EdgeInsets.symmetric(vertical: 8, horizontal: 16);
+const double header_spacing = 12.0;
+const double header_leadingIconContainerSize = 44.0;
+const double header_leadingIconBorderRadius = 12.0;
+const double header_notificationIconSize = 28.0;
+const double header_notificationDotSize = 8.0;
+const double header_profileIconContainerSize = 40.0;
+const double header_profileIconBorderRadius = 12.0;
+const double header_profileIconSize = 28.0;

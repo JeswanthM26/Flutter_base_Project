@@ -22,9 +22,9 @@ const Color tertiary_button_disabled = Color(0xFFCCE3F2);
 const Color tertiary_button_default_background = Colors.transparent;
 
 const Color primary_text = Color(0xFFFFFF);
-const Color inverse_text = Color(0x181818);
-const Color secondary_text = Color(0xE6F2FA);
-const Color tertiary_text = Color(0xBABABA);
+const Color inverse_text = Color(0xFF181818);
+const Color secondary_text = Color(0xFFE6F2FA);
+const Color tertiary_text = Color(0xFFBABABA);
 
 const Color semantic_sucess = Color(0xFF34C759);
 const Color semantaic_sucess_radius = Color(0xFFD6F4DE);
@@ -80,3 +80,11 @@ const Color Toggle_hover = Color(0xFF0073C0);
 const Color Toggle_disabled = Color(0xFFE5E5E5);
 
 const Color semantic_shadow = Color(0x1F000000);
+
+// Footer Colors
+const Color footer_background = Color(0xFF353535);
+const Color footer_default = Color(0xFFAEBBD1);
+const Color footer_selected = Color(0xFFFFFFFF);
+
+//header
+const Color header_icon_color = Color(0xFFFFFFFF);

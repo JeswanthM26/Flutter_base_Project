@@ -2,9 +2,12 @@ import 'package:Retail_Application/example/appz_button_example.dart';
 import 'package:Retail_Application/example/appz_radio_example.dart';
 import 'package:Retail_Application/example/apz_dropdown_example.dart';
 import 'package:Retail_Application/example/apz_searchbar_example.dart';
+import 'package:Retail_Application/themes/apz_theme_provider.dart';
+import 'package:Retail_Application/ui/components/apz_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:Retail_Application/ui/components/apz_footer.dart';
 import 'package:Retail_Application/ui/components/apz_header.dart';
+import 'package:provider/provider.dart';
 
 class FooterHeaderScreen extends StatefulWidget {
   const FooterHeaderScreen({super.key});
@@ -31,7 +34,8 @@ class _FooterExampleScreenState extends State<FooterHeaderScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return AppScaffold(
+   
       body: Column(
         children: [
           /// ✅ Header stays on top
@@ -68,7 +72,14 @@ class _FooterExampleScreenState extends State<FooterHeaderScreen> {
       bottomNavigationBar: FooterBar(
         selectedIndex: _selectedIndex,
         onItemSelected: _onItemSelected,
+         onCenterTap: () {  },
       ),
+      //  floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
+      //   },
+      //  child: const Icon(Icons.brightness_6),
+     // ),
     );
   }
 }
